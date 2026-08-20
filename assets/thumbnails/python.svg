@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-py" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-py)"/>
+  <g transform="translate(400,200) scale(1.2)">
+    <!-- Python Snake 1 (Blue) -->
+    <path d="M -10,-80 C -60,-80 -60,-20 -10,-20 L 10,-20 C 40,-20 40,30 10,30 L -40,30" fill="none" stroke="#38BDF8" stroke-width="28" stroke-linecap="round"/>
+    <!-- Python Snake 2 (Yellow) -->
+    <path d="M 10,80 C 60,80 60,20 10,20 L -10,20 C -40,20 -40,-30 -10,-30 L 40,-30" fill="none" stroke="#F5A623" stroke-width="28" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="390" font-family="sans-serif" font-size="22" font-weight="700" fill="#E2E8F0" text-anchor="middle" letter-spacing="2">PYTHON &amp; DATA SCIENCE</text>
+</svg>

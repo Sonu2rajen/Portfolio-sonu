@@ -1,0 +1,347 @@
+Sonu Rajendran - Portfolio PRD
+Product Requirements Document
+Sonu Rajendran — Personal Portfolio
+Website
+Version: 1.0 Owner: Sonu Rajendran Status: Draft — Foundation +
+Design Direction
+1. Purpose & Objective
+Sonu’s resume is intentionally narrow — tailored to Data Analyst / BI
+roles. The portfolio website exists to show the full range behind that
+resume: analytics depth, plus real engineering, automation, and
+application-development work that the resume can’t ﬁt.
+The site must never read as “just a Data Analyst site.” It should
+read as a Data & Technology professional who happens to be
+strongest in analytics, but who ships real systems end-to-end —
+dashboards, pipelines, apps, and automation.
+Core question the site answers: > “What can this person actually
+build?” — not just “what jobs has this person held?”
+2. Positioning Statement
+A Data & Technology professional working across Analytics,
+Data Engineering, Automation, and Application
+Development — turning messy business problems into
+dashboards, pipelines, and production systems.
+Depth: SQL, Power BI, Excel, Tableau, Python, data modeling, BI.
+Breadth: ETL, Spark, PostgreSQL, AWS, Docker/Kubernetes,
+Flutter/Spring Boot, web scraping, AI-assisted workﬂows.
+Content is always organized by honesty of claim, not hype:
+Tier
+Meaning
+Example
+Professional
+Experience
+Paid, production
+work
+Contract Intelligence
+Dashboard
+(Innomotics)
+Project Experience
+Self-built, complete,
+real data
+AWS Redshift ETL,
+PostgreSQL Data
+Modeling
+Hands-on Practice
+Exercises /
+structured learning
+19 advanced SQL
+command exercises
+Technical Exposure
+Familiarity, not
+ﬂuency
+Snowﬂake, Azure
+Fundamentals
+3. Target Roles the Site Must Stay
+Relevant To
+Primary: Data Analyst · BI Analyst · BI Developer · Analytics Engineer
+Secondary: Data Engineer · Python/Data Engineer · ETL Developer ·
+Cloud/Data Platform Engineer Additional: Python Developer ·
+Automation Developer · Application Developer · Technical Analyst ·
+AI/Automation roles
+The site must never force all of this into one generic “Skills” wall —
+it’s demonstrated through projects, grouped by category, not a giant
+tag cloud.
+4. Design Direction (from reference
+screenshots)
+Two references were provided. We take palette and content-block
+patterns from the blue–orange portfolio template (primary
+direction) and layout/typography discipline from the
+“Montgomery” dev portfolio (structural direction — bold
+declarative headlines, numbered sections, pill-tag stacks).
+4.1 Color System — Blue–Orange Theme
+Token
+Color
+Usage
+--brand-primary
+Indigo/Iris Blue 
+#5B4FE9 (≈ blue-violet
+from reference hero)
+Hero background,
+primary buttons,
+links, section labels
+--brand-accent
+Warm Orange 
+#F5A623
+CTAs (“Download
+CV”, “Contact”),
+highlight chips,
+active ﬁlter tab
+--surface-light
+Oﬀ-white #FFFFFF / 
+#FAFAFA
+Section backgrounds
+(About, Services,
+Projects)
+--surface-muted
+Light Gray #F4F4F7
+Card backgrounds,
+alternating sections
+--text-primary
+Near-black #1A1A1A
+Headlines
+--text-secondary
+Slate Gray #6B6B7B
+Body copy
+--accent-lime
+(borrowed sparingly)
+#D4F550
+Small “available for
+work” status dot /
+hover states only —
+not a base color
+Typography: One bold, slightly condensed display sans for headlines
+(mirrors the oversized “I BUILD. I BUILD. I TEST.” treatment) + a
+clean grotesque for body text. Headline weight should carry the same
+conﬁdence as the reference — short declarative lines, not paragraphs.
+Signature layout pattern (from Montgomery reference):
+numbered section labels (01, 02, 03) with a thin dotted divider, a short
+one-line description, and a right-aligned row of pill-shaped tag chips
+for tools. This becomes the pattern for the “What I Work With” /
+capability sections below.
+4.2 Component Patterns to Reuse
+Rounded pill tags (e.g. TYPESCRIPT REACT VUE chips) -> used for
+every tool/tech mention across the site.
+Colored highlight blocks behind key words (yellow/lime boxes
+behind “FRONT.” “BACK.” “EVERYTHING.”) -> used once in the
+hero to punch the 3 pillars: Analytics / Engineering /
+Automation.
+Numbered horizontal capability rows
+(Frontend/Backend/Testing pattern) -> reused as Analytics /
+Engineering / Applications / Automation rows.
+Circular “process” steps with connecting arrows (Business
+Planning -> Design Strategy -> Grow Business) -> reused as How
+I Work: Understand the Problem -> Build & Validate -> Ship &
+Document.
+Filterable portfolio grid with pill tab ﬁlters (All / Landing Page
+/ App Design / SaaS / Dashboard) -> this is the exact pattern for
+the Projects section, retargeted to Sonu’s categories.
+“About Me” split layout (photo left, stat callouts right, CV
+download button) -> reused for the About section with stats like “2
+Years Experience,” “75,670+ Records Validated,” “45+ Projects.”
+Footer CTA + subscribe-style block -> repurposed as a Contact
++ “Let’s Talk” + newsletter/blog-updates opt-in for future
+articles.
+5. Site Architecture (Sitemap)
+Home (single scrolling page, deep-linkable sections)
++-- Hero
++-- What I Work With (capability pillars)
++-- About Me
++-- Experience (timeline)
++-- Projects (filterable, categorized, expandable)
++-- How I Work (process)
++-- Certifications
++-- Contact / Footer
+Single-page for v1 (matches reference sites), but every section and
+every project has its own stable route/anchor (/projects/contract-
+intelligence-dashboard) so it scales into a multi-page site later without
+restructuring URLs.
+6. Project Repository Structure
+The codebase should follow a data-driven structure so new projects,
+certiﬁcations, or sections can be added by editing data ﬁles, not layout
+code — directly supporting the expandability requirement in Section
+9.
+portfolio/
+|
++-- src/
+|   +-- components/        # Reusable UI: capability rows, project 
+cards, filter tabs, timeline items
+|   +-- pages/              # Route-level views (Home, individual 
+project case-study pages)
+|   +-- data/
+|   |   +-- projects.js     # Single source of truth: every project 
+as structured data
+|   +-- assets/             # Screenshots, icons, images
+|
++-- public/                 # Static files (favicon, resume PDF, 
+robots.txt, etc.)
+|
++-- context/
+|   +-- prd/                 # This PRD and future iterations
+|   +-- inspo/                # Reference screenshots used for 
+design direction
+|
++-- README.md
++-- package.json
+Notes on how this maps to the PRD: - data/projects.js is what
+makes Section 7.5 (ﬁlterable Projects grid) scale to dozens of entries
+— each project is an object with title, category, tier
+(Professional/Project/Practice/Exposure), tools[], outcome, thumbnail,
+and link. Adding a project is one new object, no new components. - 
+components/ should include a generic ProjectCard, FilterTabs, 
+CapabilityRow (for the numbered “What I Work With” pattern), and 
+TimelineItem (for Experience) — all driven by props/data, not
+hardcoded copy. - context/inspo/ keeps the reference screenshots
+(Montgomery, blue-orange template) inside the repo so design
+decisions stay traceable back to source inspiration as the site evolves.
+- context/prd/ keeps this document (and future revisions) versioned
+alongside the code it describes.
+7. Section-by-Section Requirements
+7.1 Hero
+Headline pattern borrowed from Montgomery’s declarative style,
+reworked: “I Analyze. I Build. I Automate.” with “AUTOMATE”
+(or the strongest word) punched in an orange/lime highlight block.
+Subheading: one-line positioning statement (Section 2).
+Primary CTA: Download CV (orange button). Secondary: See 
+Projects.
+Small live-status chip: “Open to Data / BI / Engineering roles” with
+a pulsing dot (borrowed from lime accent).
+Photo optional — if used, styled like reference (circular crop, soft
+shadow, ﬂoating stat badge e.g. “45+ Projects”).
+7.2 What I Work With (Capability Pillars)
+Four numbered rows, each with description + tool pill chips,
+mirroring the Montgomery Frontend/Backend/Testing block exactly:
+#
+Pillar
+Tools (pills)
+01
+Analytics & BI
+Power BI · SQL ·
+Tableau · Excel (VBA)
+· Power Pivot · DAX
+02
+Data Engineering
+Python · ETL · AWS
+Redshift · Apache
+Spark · PostgreSQL ·
+Snowﬂake
+03
+Application
+Development
+Flutter · Spring Boot
+· JWT · Docker ·
+Kubernetes · REST
+APIs
+04
+Automation & AI
+Web Scraping Bots ·
+Python Automation ·
+OpenAI APIs · Power
+Automate
+7.3 About Me
+Layout: photo + circular accent ring (reference pattern) + two stat
+callout cards + CV download.
+Copy angle: “Designing Solutions, Not Just Dashboards” (reworded
+from reference headline).
+Stats to feature (real, from resume): ~2 Years Experience · 75,670+ 
+Records Validated · 130+ Contracts Analyzed · 45+ Projects Shipped.
+7.4 Experience (Timeline)
+Reverse-chronological cards, each with role, company, dates, and 2–3
+bullet highlights (compressed from resume):
+1. Executive Data Analyst & Customer Service Technical —
+Innomotics India Ltd. (Mar 2026–Present)
+2. Data Analyst | Data Platform Developer — Sounce Retail Pvt
+Ltd (Feb 2025–Mar 2026)
+3. Data Analytics Intern — Infotech (Jul–Sep 2024)
+4. Web Development Intern — Uniﬁed Mentor Pvt Ltd (Jan–Feb
+2024)
+Each card gets a “View related project ->” link where a portfolio
+project exists for that role (e.g. Contract Intelligence Dashboard,
+Business Management Platform).
+7.5 Projects — Filterable, Categorized, Expandable
+(core section)
+This is the most important section and must directly reuse the
+“Digital Product Showcases” ﬁlter-tab pattern from the reference
+(All / Landing Page / App Design / SaaS / Dashboard), remapped to
+Sonu’s domains:
+Filter tabs: All · Power BI · Excel · SQL · Tableau · Python · Cloud/ETL · 
+Application Dev · Automation/Bots
+Card anatomy (per project): thumbnail/screenshot, title, one-line
+outcome (quantiﬁed where possible), tech-pill row, tier badge
+(Professional / Project / Practice), link out (GitHub / live demo / case
+study).
+Initial inventory to seed (from current portfolio + resume),
+grouped by category:
+Power BI (10 dashboards) — incl. Contract Intelligence
+Dashboard, Installed Base Intelligence Dashboard, Time Entries &
+Utilization Dashboard
+Excel Analytics — 6 completed + 1 ongoing dashboard/tracker
+project, incl. Daily Run Rate VBA Automation (3,000+ SKUs)
+SQL — 3 EDA projects + 19 advanced SQL exercises (grouped as a
+single expandable “SQL Practice Library” card, not 19 separate
+cards)
+Tableau (9 dashboards)
+Python Analytics — 7 EDA/analysis projects + 2 web-scraping
+projects
+Power Pivot — 1 analysis project
+Application Development — QR-based iBase Industrial Asset
+Management app (Flutter, Spring Boot, JWT, PostgreSQL, Docker,
+Kubernetes); Business Management Platform (Spring Boot, SQL
+Server, embedded Power BI)
+Automation / Bots — Resume Parser Bot, Barcode Generator
+(Word Mail Merge), Amazon Data Scraper Bot
+Cloud / Data Engineering — AWS Redshift + Python project,
+Data Lake ETL with Spark, PostgreSQL Data Modeling (Python +
+SQL), Python Data Wrangling, Flights AWS ETL Pipeline, Amazon
+Mechanical Keyboard Scraping project
+Scale requirement: the grid must support dozens of cards without
+feeling cluttered — use pagination or “Load more” beyond ~9 cards
+per ﬁltered view, matching the reference’s 6-per-view density.
+7.6 How I Work (Process)
+Three-step circular process row (reference pattern), reworded:
+Understand the Data/Problem -> Build, Model & Validate ->
+Ship, Document & Iterate
+7.7 Certiﬁcations
+Simple badge row: Google Data Analytics Certiﬁcate · PL-300 (In
+Progress) · Python for Data Science (NPTEL) · SQL for Data Science
+7.8 Contact / Footer
+“Got a project or a role in mind? Let’s talk” CTA block (orange,
+reference style).
+Direct contact: email, phone, LinkedIn, GitHub.
+Optional future: “Get notiﬁed when I publish a new project”
+subscribe ﬁeld (reuses reference’s subscribe block) — supports the
+“articles / technical write-ups” future-expansion goal.
+8. Content Rule: Portfolio ≠ Resume
+The site must never just restate the resume. For every resume
+bullet used, the site should link to or expand into: the actual
+dashboard/screenshot, the business problem, the technical approach,
+and the outcome — evidence, not just claims.
+9. Non-Functional / Architecture
+Requirements
+1. Expandability is a hard requirement. Adding a new project,
+certiﬁcation, or experience entry must not require touching layout
+code — data-driven cards (JSON/CMS-backed) per project.
+2. Category taxonomy is ﬁxed but extensible — new categories
+(e.g. “AI/ML,” “Enterprise Systems”) can be added to the ﬁlter bar
+without redesign.
+3. No dead-end pages — every project card resolves to a real
+destination (repo, live demo, or case-study write-up), never a
+placeholder.
+4. Enterprise-credible visual bar — professional enough for
+enterprise recruiters despite the vivid palette; avoid template-
+generic Lorem Ipsum polish, avoid looking exclusively like a
+designer/frontend portfolio.
+5. Responsive — capability rows and ﬁlter grid must collapse cleanly
+to mobile (stacked cards, single-column pill wrap).
+10. Explicit Non-Goals (v1)
+Not a multi-page CMS-driven blog (structure should allow it later,
+not build it now).
+Not attempting to claim “expert” level in exposure-only
+technologies (Snowﬂake, Azure) — these stay labeled as Technical
+Exposure.
+Not a generic template reskin — reference sites are for pattern
+and palette inspiration only, not literal reuse of their copy or
+stock imagery.
+11. Open Items for Next PRD Iteration
+Per the original PRD, the following will be layered in once supplied: -
+Actual project screenshots/GitHub links per project - Final copy for
+each capability/about section - Conﬁrmed ﬁnal color hex values + font
+pairing - Decision: single-page vs. multi-page architecture for v2

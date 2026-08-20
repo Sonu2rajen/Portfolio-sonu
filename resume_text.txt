@@ -1,0 +1,81 @@
+SONU RAJENDRAN 
+Data Analyst | Business Intelligence Analyst | Industrial & E-Commerce Analytics | Power BI | SQL | Python | ETL | AI Automation 
+Mumbai, India | 9136800446 | sonurajendran2@gmail.com - (Primary) rajendransonu1703@gmail.com - (LinkedIn)| linkedin.com/in/sonu-rajendran | 
+https://github.com/Sonu2rajen 
+PROFESSIONAL SUMMARY 
+Data Analyst delivering BI and data governance across manufacturing and e-commerce. Builds dashboards and automated trackers in Power BI and 
+Excel for inventory, sales, and manufacturing analytics. Built a Contract Intelligence Dashboard cutting lookup time from 5–10 minutes to ~10 seconds, 
+and validated 75,670+ records in a global Master Data Governance initiative working and collaborating with Germany. Close to 2 years of experience in 
+SQL, Power BI (DAX, Power Query, Star Schema), Python, ETL, and SAP Analytics Cloud. 
+ 
+PROFESSIONAL EXPERIENCE 
+Executive Data Analyst and Customer Service Technical — Innomotics India Ltd. 
+Mar 2026 – Present | Mumbai 
+• 
+Built a Contract Intelligence Dashboard in Power BI, using SQL to query and restructure historical contract data across 130+ enterprise service 
+contracts, cutting lookup time from 5-10 minutes to ~10 seconds and speeding up engineer scheduling. 
+• 
+Cleansed and validated 75,670+ Installed Base records using SQL as one of two India-based analysts on a global Master Data Governance 
+initiative, coordinating daily with Germany's data team to standardize the SIRIUS system; separately resolved application issues with a Chile-
+based ACP administrator. 
+• 
+Designed an Installed Base Intelligence Dashboard covering 3,800+ assets using SQL for data preparation and Power BI Star Schema modeling to 
+resolve table relationship conflicts — cutting manual analysis by 70–80% and reaching 96%+ trusted asset visibility. 
+• 
+Built a Time Entries & Utilization Dashboard using SQL and Star Schema modeling on Dataverse-sourced data, giving management direct visibility 
+into productivity and site-visit utilization — cutting a half-day manual process to minutes. 
+• 
+Investigated duplicate records, inactive tickets, and IBase inconsistencies using SQL as the primary validation tool with Python, applying a 
+hypothesis-driven approach to implement data quality fixes; built supporting SSIS/SSRS pipelines to load and clean Dynamics 365 data. 
+• 
+Developed a QR-based asset management app (Flutter, Spring Boot, JWT authenticaion PostgreSQL, Docker, Kubernetes) digitizing access to 
+records for 16,218 drives and 80,000+ documents, now in ACP cyber-security production validation. 
+• 
+Coordinated with external service vendors and marketplace/system partners on breakdown-visit and preventive maintenance scheduling, 
+alongside contract, SLA, and engineer-assignment management, presenting findings to stakeholders across Germany and India. 
+Data Analyst | Data Platform Developer — Sounce Retail Pvt Ltd 
+Feb 2025 – Mar 2026 | Mumbai 
+• 
+Automated Daily Run Rate calculations via Excel VBA across 3,000+ SKUs, cutting processing time by 90% and giving procurement same-day 
+restocking visibility. 
+• 
+Built Power BI and Tableau dashboards tracking inventory, sales, pricing, and product performance across 3,000+ SKUs, turning multi-day manual 
+analysis into minutes. 
+• 
+Wrote SQL queries and built Python ETL pipelines consolidating multi-platform sales, pricing, and procurement data into automated monthly 
+finance and margin/suppression reports. 
+• 
+Ran pricing, margin, and product-suppression analysis across 6 marketplaces (Amazon, Flipkart, Shopify, Blinkit, Zepto, Nykaa) to flag visibility and 
+profitability issues before they affected sell-through. 
+• 
+Queried customer behavior, conversion, and seasonality trends in SQL to identify high-value segments and cross-sell opportunities, guiding 
+pricing and campaign decisions. 
+• 
+Built a Python scraping bot pulling pricing, title, and category data from Amazon, Flipkart, Blinkit, Swiggy, and Nykaa product pages, cutting data 
+collection for suppression/margin analysis from a full day to under an hour. 
+ADDITIONAL EXPERIENCE 
+• Data Analytics Intern — Infotech (Jul–Sep 2024): AI automation workflows using Python, Scikit-learn, OpenAI APIs. | Web Development Intern — 
+Unified Mentor Pvt Ltd (Jan–Feb 2024): Responsive web apps using React.js, REST APIs. 
+PROJECTS 
+Business Management Platform (Sounce Retail) — Spring Boot, SQL Server, JWT, embedded Power BI: Built the org's first internal BI platform, 
+unifying data across 8 marketplaces into one system. 
+Power BI, Excel — Sales Tracker, Daily Stock Requirement Trackers — Designed reports and dashboards for sales analysis, enabling the 
+identification of high- and low-performing products and tracking campaign impact trends. 
+ 
+SKILLS 
+BI & Analytics: SQL (Joins, CTEs, Aggregations, Query Optimize, Window and Strings, Triggers-Events), Power BI -Desktop | Service(DAX, Power Query, 
+Star Schema), ALM Toolkit Tableau, Looker, QlikSense, SSRS, SSIS, Dataverse, Advanced Excel (VBA, Pivot Tables, Charts, INDEX-match, Lookups) 
+Programming & ETL: Python (Pandas, NumPy, Scikit-learn), ETL Pipelines, Snowflake, Azure Fundamentals (Conceptual), Java, AI-ML fundamentals 
+Enterprise & E-commerce Platforms: SAP Analytics Cloud, Microsoft Dynamics 365, SharePoint, OneDrive, Google Analytics, Amazon Vendor 
+Central, Flipkart, Blinkit, Swiggy Instamart, Zepto, Nykaa, Shopify 
+Application Development: Flutter, Spring Boot, JWT Auth, Swagger, REST APIs, Docker, Kubernetes, Git, MongoDB, PostgreSQL 
+AI Tools: ChatGPT, Claude, Copilot, Gemini, DeepSeek, AntiGravity, PowerApps, Power Automate(used for coding assistance and workflow 
+acceleration) 
+Domain: Master Data Management, Industrial & Supply Chain Analytics, Vendor Coordination, Root Cause & Data Quality Analysis 
+Soft Skills: Executive Presentations, Cross-Functional Global Collaboration, Hypothesis-Driven Problem Solving, Stakeholder Communication 
+ 
+CERTIFICATIONS 
+Google Data Analytics Certificate | PL-300: Power BI Data Analyst (In Progress) | Python for Data Science (NPTEL) | SQL for Data Science  
+EDUCATION 
+Master of Computer Science — SIES College of Arts, Science | CGPA 8.4/10 | 2023–2025 
+Bachelor of Computer Science — SIES College of Arts, Science | CGPA 8.6/10 | 2020–2023 

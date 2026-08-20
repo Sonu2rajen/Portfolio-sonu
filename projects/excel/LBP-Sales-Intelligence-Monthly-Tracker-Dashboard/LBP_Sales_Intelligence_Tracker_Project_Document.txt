@@ -1,0 +1,148 @@
+LBP SALES INTELLIGENCE TRACKER - PROJECT DOCUMENTATION
+
+PROJECT OBJECTIVE The workbook is designed as an Enterprise Sales
+Intelligence Tracker for Love Beauty & Planet (LBP). It separates Raw
+Data, Helper Logic, Pivot Layer, Analysis, and Dashboard so it can be
+refreshed every month by appending new data.
+
+================================================== WORKBOOK STRUCTURE
+==================================================
+
+00_README - Workbook documentation - Update instructions - Business
+definitions - Workbook architecture
+
+Questions answered: - What is this workbook? - How do I update it? -
+What does each sheet do?
+
+------------------------------------------------------------------------
+
+01_Offtakes_Base_File Purpose: - Historical raw data repository. -
+Source of truth. - New months are appended, never deleted.
+
+Rules: - No manual edits. - Excel Table: tbl_Offtakes.
+
+Main fields: Monthly Period, Month, Quarter, Year, Customer, Category,
+Ingredient, Segment, Product Title, Basepack, Offtakes Value (Lakhs).
+
+------------------------------------------------------------------------
+
+02_Helper
+
+Acts as the engine of the workbook.
+
+Sections: A Workbook Settings B Calendar Table C Master Lists D Time
+Dimensions E Product Titles F KPI Engine G Alert Engine H Dashboard
+Engine I Validation Lists
+
+Dynamic lists: Customer Category Ingredient Segment Basepack Product
+Title Quarter Month Year
+
+Purpose: - Dropdowns - Validation - Future slicers - Reusable
+calculations
+
+------------------------------------------------------------------------
+
+03A_PivotCache
+
+Backend only.
+
+Contains Pivot Tables: - Monthly Sales - Customer Sales - Category
+Contribution - Ingredient Contribution - Segment Contribution - Product
+Title - Basepack
+
+No charts. No formatting. Feeds every analysis page.
+
+------------------------------------------------------------------------
+
+03_Business_Overview
+
+Purpose: Answer: ‘How is the business performing overall?’
+
+Contains: - KPI Cards - Business Highlights - Monthly Trend - Customer
+Contribution - Category Contribution - Ingredient Contribution - Segment
+Contribution
+
+KPI Cards: - Total Sales - Total Customers - Total Basepacks - Total
+Products - Total Ingredients - Total Categories
+
+Business Highlights: - Highest Sales Month - Lowest Sales Month - Top
+Customer - Top Category - Top Ingredient - Top Segment
+
+Charts: Monthly Trend (Line) Customer Contribution (Bar) Category
+Contribution (Donut) Ingredient Contribution (Horizontal Bar) Segment
+Contribution (Horizontal Bar)
+
+Questions answered: - How much have we sold? - Which customer
+contributes most? - Which category dominates? - Which ingredient is
+strongest? - Which segment leads?
+
+------------------------------------------------------------------------
+
+04_Top_Performers
+
+Purpose: Identify the highest-performing business drivers.
+
+Summary Cards: - Top Customer - Top Product - Top Basepack - Top
+Ingredient - Top Category - Top Segment
+
+Each card displays: - Name - Sales - Contribution %
+
+Charts: Top Customers Top Products Top Basepacks Top Ingredients Top
+Categories Top Segments
+
+Questions answered: - Who is No.1? - Which products generate most
+revenue? - Which customer drives business? - Which ingredient performs
+best?
+
+------------------------------------------------------------------------
+
+05_Opportunity_Areas
+
+Purpose: Identify where management should take action.
+
+Summary Cards: - Lowest Customer - Lowest Product - Lowest Basepack -
+Lowest Ingredient - Lowest Category - Lowest Segment
+
+Charts: Bottom 10 analysis.
+
+Also includes: - Risk Indicator - Recommended Actions - Opportunity
+observations
+
+Questions answered: - Which customers are underperforming? - Which
+products need promotion? - Which categories require attention?
+
+------------------------------------------------------------------------
+
+06_Drill_Down (Designed)
+
+Purpose: Explain WHY performance looks the way it does.
+
+Cross Analysis: Customer x Category Customer x Ingredient Customer x
+Segment Ingredient x Segment Category x Ingredient Category x Segment
+
+Questions answered: - Which customer buys which category? - Which
+ingredient drives which segment? - Which category depends on one
+customer? - Which combinations create the most sales?
+
+------------------------------------------------------------------------
+
+OVERALL DATA FLOW
+
+01_Offtakes_Base_File ↓ 02_Helper ↓ 03A_PivotCache ↓
+03_Business_Overview 04_Top_Performers 05_Opportunity_Areas
+06_Drill_Down ↓ 07_Business_Alerts (Planned) 08_KPI_Scorecard (Planned)
+09_Executive_Dashboard (Planned)
+
+================================================== ENTERPRISE PRINCIPLES
+==================================================
+
+-   Historical data is never deleted.
+-   New months are appended.
+-   Values displayed in Lakhs.
+-   PivotTables stay in PivotCache.
+-   Dashboard sheets contain charts and insights only.
+-   Helper sheet powers the workbook.
+-   Each page answers a specific business theme.
+-   Shared slicers control multiple PivotTables.
+
+NEXT MODULES 07 Business Alerts 08 KPI Scorecard 09 Executive Dashboard
