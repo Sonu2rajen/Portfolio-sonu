@@ -1,0 +1,33 @@
+# Virtual environments
+venv/
+hstrokee/
+.env/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+
+# Large dataset files (exceed GitHub file size limits)
+*.csv
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.model
+*.weights
+*.dll
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

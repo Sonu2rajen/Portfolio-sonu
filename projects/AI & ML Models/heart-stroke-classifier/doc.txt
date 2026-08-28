@@ -1,0 +1,152 @@
+Abstract:
+The primary purpose of this project is to predict coronary heart strokes. Heart strokes are on the rise globally, including among children and teens. In recent times, heart stroke prediction has become one of the most complex tasks in the medical field. Currently, approximately one person dies every minute due to a heart stroke. Unfortunately, detecting such conditions in individuals is a challenging task. Given the complexity of heart stroke prediction, there is a need to automate the prediction process to mitigate the associated risks and alert patients well in advance. Handling such complex tasks can be achieved by utilizing historical and reliable datasets. Heart stroke prediction is carried out using a dataset within the chosen model. Automation for this project is achieved through various data mining approaches. Some of the methods used in this project include decision trees, logistic regression, the KNN algorithm, SVM classifier, and Random Forest machine learning algorithms. Based on factors such as age, gender, average glucose level, smoking status, body mass index, employment type, living conditions, marital status, hypertension, and history of coronary heart disease, these parameters forecast the likelihood of a person having a stroke. In the end, after all the tests, we found that the SVM algorithm achieved an accuracy of 93.93%, which is the highest among all the algorithms used.
+
+Introduction:
+Cardiovascular diseases (CVDs) are one of the leading causes of mortality globally, accounting for 32 percent of all deaths and affecting 17.9 million people worldwide. Among these, the two most significant CVDs are coronary heart attacks and strokes, which together account for 85 percent of all cases. A heart attack occurs when oxygen or blood flow to the heart muscle is interrupted, while a stroke is caused by a blockage in the artery that supplies blood to the brain. Although these diseases are serious, the risk factors that contribute to them are very similar. These factors include an unhealthy diet, smoking, diabetes, a sedentary lifestyle, excessive alcohol consumption, high blood pressure, and family history. Detecting a heart attack and seeking medical attention as soon as possible not only increases the chances of survival but also helps prevent future heart issues.
+Machine learning has emerged as one of the most challenging fields in modern technology. It is a form of artificial intelligence where models can analyze data, identify patterns, and make predictions with minimal human intervention. Various machine learning techniques can be applied to predict heart stroke in individuals. Data mining techniques involve extracting valuable and hidden information from large datasets, and machine learning, a subfield of data mining, effectively handles well-formatted large-scale datasets. In the medical field, machine learning can be used for analysis, detection, and prediction of various diseases.
+The primary aim of this project is to provide doctors with a tool to predict heart strokes as early as possible, helping to administer effective treatment and avoid severe consequences. Machine learning plays a crucial role in identifying hidden patterns in data, which can then be analyzed to predict heart strokes. Based on input characteristics obtained from the dataset used to train the model, the proposed system predicts heart strokes in individuals using a variety of machine learning methods, such as Random Forests and K-Nearest Neighbors.
+
+Literature Review:
+Heart disease kills many people, and people who smoke are more likely to develop heart disease. If the ECG (electrocardiogram pattern) is a ventricular echo, the person is at risk for a heart attack. Many previous studies have used machine learning-based methods to predict heart attacks. Chen et al. Heart attack prediction guide. They used data from 82 stroke patients for analysis using two artificial neural network (ANN) models to predict accuracy and achieved 79% and 95% accuracy, respectively. Zhong et al. Cardiology studies have been conducted to predict mortality in stroke patients. A total of 15,099 patients were included in this study for cardiac diagnosis. They use deep neural network technology to analyze heartbeat. The authors used PCA to extract medical history and predict heart attacks. Govindarajan et al. collected data from 507 patients to conduct a study combining text extraction and machine learning to classify heart disease. Their study used various machine learning (ML) algorithms for ANN training, with the SGD algorithm achieving the highest result of 95%. Amini et al. A study found that there were determinants of arterial performance in 807 healthy and diseased participants, 50 of whom had stroke, diabetes, heart disease, smoking tobacco, hyperlipidemia, and alcohol consumption. Excludes dangerous situations. They use the c4.5 decision tree algorithm (95% accuracy) and the nearest neighbor method (94% accuracy). Shin et al. conducted research on AI-assisted heart rate prediction. Their study used the Cardiovascular Health Study (CHS) dataset to predict stroke. For main content analysis, features were extracted using the decision tree method. They used a distributed neural network approach to build the model. The model achieved 97% accuracy. Chin et al. A study shows that premature beats can be heard. The main goal of their research is to develop a strategy that can be used to detect large beats using CNNs. They collected 256 images to train and test the CNN model. They used the data representation method to improve the images captured in the imaging plan by pre-planning to remove the unwanted, non-existent stroke area. The CNN method achieves up to 90% accuracy. After reviewing previous papers, the main idea behind the proposed scheme is to establish a stroke prediction based on communication. Based on the accuracy, precision, regression and f-value, we studied the KNN, decision tree and random forest classification algorithms and selected the best classification method to predict heart disease. Murat et al. It has become a common practice to provide measurement information and increase the deep understanding of patterns in the classification of ECG data. In this study, they used electrocardiogram data from 5 tissues (a total of 100,022 beats from the MIT-BIH Arrhythmia Dataset) to evaluate the most comprehensive study. Hong et al. The review authors evaluated deep learning methods for electrocardiogram data through modeling or post-generation thinking. The author used ECG (DL) deep learning models published by Google Scholar, PubMed, Digital Appendices & Library Mission from January 1, 2010 to February 29, 2020. Various deep learning methods proposed by Ebrahimi et al. are reviewed. Most of the analyses used at least some form of deep learning to extract and classify features. Determination of popular theory and prediction (CNN) with thirteen deep layers of fully convolutional neuron ensembles by Acharya et al. This method is time consuming, does not allow the use of real objects, and can control for performance differences among learners. As in ANN, the overall performance of the final version of CNN will be determined by the weighted image of the neighborhood and the location of the previous layer. The pooling method reduces the size of the output neurons of the convolution process, reduces computational time, and prevents overfitting. The accuracy, specificity, and sensitivity of the proposed method were 88.67%, 90.00%, and 95.00%, respectively. Acharya et al. In fact. It was determined that the baseline blurring and measurement of electrocardiograms were successful but further research is needed. The accuracy value is 86.67% and the specificity is 93.75%. The design has proven to be good in various performance measurements but can be modified for real use. According to Limaye and Deshmukh, the input of the ECG consists of low-frequency alarms between 0.5 and 100 Hz. The device that allows filtering of ECG recordings is called a cardiac video display unit. A low pass filter (LPF) is used to filter out non-noise. Mbachu et al. Models of LPF, HPF and BSF provided by Kaiser Windows, where three filters are connected in series, giving a signal in the range of 0 to 100 Hz, giving a signal at 13 dB every 200 voids, with negative reporting of the cut-off. Deiss et al. used a Hamming window to create a virtual design with 50 Hz interference, resulting in 13.4 dB attenuation. Lijan et al. reviewed more than eighty cardiac MRI, computed tomography, and single-photon computed tomography studies, including imaging in vascular coagulation and echocardiography. Introduced the basics of state-of-the-art deep search algorithms. Kaplan Belkaya et al. published a review of electrocardiographic signatures, analyzing 1,538 recordings, including heart rate measurements, pulse rate, heart rate monitoring, emotional intelligence, and biometric identification. They also record the best performance of the first ECG alarm system. First of all, it is important to learn its benefits as a different approach.
+Cheng et al. published a report on the evaluation of heart failure. In their analysis using data from 82 stroke patients, two ANN models were used to find the accuracy of 79% and 95% respectively. Conducted a study to predict the mortality of stroke patients. In their study, they used 15,099 patients to analyze the incidence of heart disease. They use deep neural network approach to diagnose heart disease. The authors used PCA to extract clinical history data and predict cardiovascular disease. The area under the curve (AUC) value is 83%. Cene et al. conducted a study on automatic detection of heart disease at early stage. The main goal of their research is to develop a system for the first heart treatment using CNNs. They collected 256 images and tested the CNN model. They improve the image collection by using data stretching methods to eliminate the regions where heart diseases do not occur in body images. CNN methods gave 90% accuracy. After reviewing the above information, the main idea behind this proposal is to create an understanding of heart rate estimation.
+
+Problem formulation:
+In this project, we used the heart disease dataset provided by Kaggle for analysis. This file contains a total of 12 features. This data was used to train and evaluate the model. Our dataset contains a total of 5110 rows and 12 columns. The data is not perfectly symmetrically distributed across all groups, but it is well distributed across other groups. In fact, collecting parallel data is quite difficult. There are a total of 12 features in this file. Table 1 summarizes this.
+
+Classifiers:
+Random Forest:
+Random Forest is based on ensemble learning, where multiple decision trees are built using different subsets of the training data (using bootstrapping) and features (using random feature selection). Each tree makes a prediction, and the final prediction is the majority vote (in classification) or average (in regression) of all the trees.
+It reduces overfitting, which is a common problem with individual decision trees, by averaging multiple trees. The random selection of features at each split also increases diversity among the trees, improving generalization to unseen data.
+
+K-Nearest Neighbors (KNN):
+KNN is a lazy learning algorithm that doesn't explicitly learn a model during training. Instead, it stores the entire training dataset and makes predictions by looking at the k closest points (neighbors) in the feature space during testing. A new point is classified by the majority label of these neighbors.
+The proximity between data points is measured using distance metrics (e.g., Euclidean distance), and the classification is made based on the most common label among the nearest neighbors. Itâs effective in scenarios where similar data points tend to have the same class label.
+
+Support Vector Machine (SVM):
+SVM works by finding the hyperplane (in 2D, this is a line; in higher dimensions, it's a plane) that best separates the classes with the largest margin. The margin is the distance between the hyperplane and the closest data points (called support vectors) from each class.
+SVM focuses on maximizing the margin, as a larger margin is thought to lead to better generalization. For data that isnât linearly separable, SVM uses kernel functions (like the RBF or polynomial kernel) to transform the data into a higher-dimensional space where a linear separator can be found.
+
+Logistic Regression:
+Logistic Regression estimates the probability of a binary outcome (e.g., stroke or no stroke) based on one or more input features. It applies a logistic function (sigmoid curve) to a linear combination of the input features to output a probability.
+The logistic function maps any real-valued number into the range [0, 1], which can be interpreted as a probability. The model is trained by maximizing the likelihood of the observed data using an optimization algorithm (e.g., gradient descent). Logistic Regression is effective when the relationship between features and the outcome is approximately linear.
+
+Decision Tree:
+A Decision Tree splits the data recursively based on the value of a chosen feature that best separates the classes (using metrics like Gini impurity or information gain). At each node, the data is divided into branches based on this feature, and the process continues until the leaves contain homogeneous data points (i.e., belonging to a single class).
+The tree is built top-down by selecting the best feature at each step that minimizes classification error. The splitting continues until certain stopping criteria are met (e.g., maximum depth, minimum samples in a node). Decision Trees can easily overfit, but they are interpretable and provide a clear path of decision-making based on the features.
+
+In summary, each algorithm has a different way of processing and learning from the data:
+Random Forest combines multiple trees to reduce overfitting.
+KNN relies on the distance between data points.
+SVM aims to find a separating hyperplane with a maximum margin.
+Logistic Regression predicts probabilities using a linear combination of features.
+Decision Trees split the data based on the most informative features at each step.
+
+dataseet:
+The dataset consists of 11 parameters and that parameters are id, age, gender, hypertension, worktype, residence type, heart disease, avg level of glucose, body mass index (bmi), marital status, smoking status, and stroke.
+id : This attribute means person’s id. It’s numerical data.
+Age : This attribute means a person’s age. It’s numerical data.
+Gender : This attribute means a person’s gender. It’s categorical data.
+Hypertension : This attribute means that this person is hypertensive or not. It’s numerical data.
+work type : This attribute represents the person work scenario. It’s categorical data.
+residence type : This attribute represents the person living scenario. It’s categorical data.
+heart disease : This attribute means whether this person has a heart disease person or not. It’s numerical data.
+avg glucose level : This attribute means what was the level of a person’s glucose condition. It’s numerical data.
+Bmi : This attribute means body mass index of a person. It’s numerical data.
+ever married : This attribute represents a person’s married status. It’s categorical data.
+smoking Status : This attribute means a person’s smoking condition. It’s categorical data.
+Stroke : This attribute means a person previously had a stroke or not.
+
+age, bmi,avg_glucose_level are the only continuous features.
+id is a primary key which is of no importance.
+hypertension, heart_disease, stroke are Categorical features but they are encoded.
+
+Multivariate analysis is the analysis of more than one variable.
+
+	                age	avg_glucose_level	bmi
+age	               1.000000	0.238171	                  0.333398
+avg_glucose_leve    0.238171	1.000000	                  0.175502
+bmi	              0.333398	0.175502	                  1.000000
+
+A chi-squared test (also chi-square or χ2 test) is a statistical hypothesis test that is valid to perform when the test statistic is chi-squared distributed under the null hypothesis, specifically Pearson's chi-squared test. A chi-square statistic is one way to show a relationship between two categorical variables.
+
+Null Hypothesis (): The Feature is independent of target column (No-Correlation)
+Alternative Hypothesis (): The Feature and Target column are not independent (Correlated)
+
+Column	Hypothesis                  Result
+0	gender	                  Fail to Reject Null Hypothesis
+1	ever_married	Reject Null Hypothesis
+2	work_type	                  Reject Null Hypothesis
+3	Residence_type	Fail to Reject Null Hypothesis
+4	smoking_status	Reject Null Hypothesis
+5	hypertension	Reject Null Hypothesis
+6	heart_disease	Reject Null Hypothesis
+7	stroke	                  Reject Null Hypothesis
+
+Initial Analysis Report
+There are missing values in the bmi.
+The id column can be deleted because each row has unique values.
+Resident_type and Gender columns are not correlated with stroke (Target Column)
+The stroke column is the target to predict.
+
+Do Men or Women have more chance of stroke?
+Impact of BMI
+
+The Categories of BMI :
+Under_weight ( BMI < 18.5 )
+Normal_weight ( 18.5 < BMI < 25 )
+Over_weight ( 25 < BMI < 30 )
+Obese ( BMI > 30 )
+
+
+formerly_smoked seems to have high chance of stroke may be because of long term effect of smoking.
+smokes and never smoked have nearly same chance
+smoking have a long term impact and may not be seen at the beginning stages.
+
+Num of Numerical Features : 6
+['age', 'hypertension', 'heart_disease', 'avg_glucose_level', 'bmi', 'stroke']
+
+Num of Categorical Features : 5
+['gender', 'ever_married', 'work_type', 'Residence_type', 'smoking_status']
+
+Num of Discrete Features : 3
+['hypertension', 'heart_disease', 'stroke']
+
+Num of Continuous Features : 3
+['age', 'avg_glucose_level', 'bmi']
+
+7) Partitioning
+Splitting the data for train and test
+x means the fetaures and Y means the target variable
+80% of data would be used for training and the 20% would be used for testing
+X ---X_train, X_test 
+Y ---Y_train, Y_test
+
+RF:
+Random Forest is based on ensemble learning, where multiple decision trees are built using different subsets of the training data (using bootstrapping) and features (using random feature selection).
+
+KNN:
+KNN is a lazy learning algorithm that doesn't explicitly learn a model during training. Instead, it stores the entire training dataset and makes predictions by looking at the k closest points (neighbors) in the feature space during testing. A new point is classified by the majority label of these neighbors.
+
+DT:
+A Decision Tree splits the data recursively based on the value of a chosen feature that best separates the classes (using metrics like Gini impurity or information gain).
+
+SVM:
+SVM works by finding the hyperplane (in 2D, this is a line; in higher dimensions, it's a plane) that best separates the classes with the largest margin.
+
+LR:
+Logistic Regression estimates the probability of a binary outcome (e.g., stroke or no stroke) based on one or more input features.
+
+[1] D. Zhong, Y. Chen, Y. Chen, S. Ye, W. Cai, and M. Chen, “A Classification Method Based on Deep Convolutional Neural
+Network,” Journal of Healthcare Engineering, vol. 2021, 2021, doi: 10.1155/2021/7167891.
+[2] T. M. Geethanjali, D. M. D, M. S. K, S. M. K, and A. Professor, “STROKE PREDICTION USING MACHINE LEARNING,” JETIR, 2021.
+[Online]. Available: www.jetir.orgd710
+[3] B. Deepak Kumar, S. Yellaram, S. kothamasu, S. Puchakayala, and A. Professor, “Heart Stroke Prediction using Machine Learning,” 2021. [Online].
+Available: www.ijcrt.org
+[4] G. Sailasya and G. L. Aruna Kumari, “Analyzing the Performance of Stroke Prediction using ML Classification Algorithms.” [Online]. Available:
+www.ijacsa.thesai.org
+[5] L. Amini, R. Azarpazhouh, M. T. Farzadfar, S. A. Mousavi, F. Jazaieri, F. Khorvash, R. Norouzi, and N. Toghianfar,
+“Prediction and control of heart stroke by data mining,” International Journal of Preventive Medicine, vol. 4, no. Suppl 2, pp.
+S245–249, May 2013. 
+[6] P. Govindarajan, R. K. Soundarapandian, A. H. Gandomi, R. Patan, P. Jayaraman, and R. Manikandan, “Classification of
+heart stroke disease using machine learning algorithms,” Neural Computing and Applications, vol. 32, no. 3, pp. 817–828, Feb.
+2020.

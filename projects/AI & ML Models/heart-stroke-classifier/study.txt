@@ -1,0 +1,9 @@
+--stroke is the target variable
+--and the other paramaters are independent of features
+--feature selection means it happens sometime that there are 50-100 features and not each and every feature might be useful so feature selection indicates choosing the useful features out of the total features.
+--lets consider governmnet has start a scheme if you are working in a company 100 employees are there and on an average the salary of employees is 50000per month, some might have 10000, some might have 20000 and so on until 1lakh and if we divide it we will get on an average the salary as 50k per month.
+so the scheme is if the averrage salary of the employees is 50k they will get some extra benefit but what if there is one employee included nd his salary is 10lk because of this one person the average will increase, without consdering this one persons salary of 10lk the average was 50k but when we include this employee's salary into it it suddenly exceed the maximum requirement.
+so they wont get any benefits as it has already exceeded the range. This person is the outlier in this example and if one person has salary as 1k even that person is an outlier because even through that employee it will chnge i.e the average...so these are the outliers and we need to remove this from the data.
+--Box-plot: the box is the mean data and the dot dotss are the persons.
+--the outliers in bmi and all i will keep basically bcoz they r the reasons of stroke if we remove that what would be the couase for the stroke?
+--
