@@ -1,11 +1,5 @@
 // ──────────────────────────────────────────────
-// SONU RAJENDRAN PORTFOLIO — INTERACTIVE ENGINE
-// Features:
-// 1. Hero Highlights Bar
-// 2. Card Preview Animated Image Slider
-// 3. Dedicated Case Study Page / Hash Routing
-// 4. Video-First Media Carousel with Lightbox
-// 5. Contact Mailto & WhatsApp integration
+// SONU RAJENDRAN PORTFOLIO — INTERACTIVE ENGINE (V2.0 UPGRADE)
 // ──────────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,12 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let cardSliderTimers = [];
 
   // DOM Elements
+  const heroFloatCardsContainer = document.getElementById("hero-float-cards");
   const heroAchieveBar = document.getElementById("hero-achievements-bar");
   const timelineContainer = document.getElementById("timeline-container");
   const filterBar = document.getElementById("filter-bar");
   const projectsGrid = document.getElementById("projects-grid");
   const loadMoreBtn = document.getElementById("load-more-btn");
   const loadMoreWrapper = document.getElementById("load-more-wrapper");
+  const eduGrid = document.getElementById("edu-grid");
   const certsGrid = document.getElementById("certs-grid");
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.querySelector(".nav-links");
@@ -31,7 +27,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxImg = document.getElementById("lightbox-img");
   const lightboxClose = document.getElementById("lightbox-close");
 
-  // 1. Render Hero Achievements Bar
+  // Helper to resolve fallback SVG icon per category
+  function getFallbackCategoryIcon(category) {
+    const map = {
+      "AI & ML Models": "assets/thumbnails/python.svg",
+      "Automation & Bots": "assets/thumbnails/automation.svg",
+      "Advanced Data Engineering": "assets/thumbnails/cloud.svg",
+      "Docker & SQL Pipelines": "assets/thumbnails/cloud.svg",
+      "Excel Analytics": "assets/thumbnails/excel.svg",
+      "Excel & Power Pivot": "assets/thumbnails/excel.svg",
+      "Full-Stack Development": "assets/thumbnails/appdev.svg",
+      "Power BI & Snowflake": "assets/thumbnails/powerbi.svg",
+      "Power BI & SQL EDA": "assets/thumbnails/powerbi.svg",
+      "Python EDA": "assets/thumbnails/python.svg",
+      "Python Scraper Bots": "assets/thumbnails/python.svg",
+      "SQL EDA & Data Handling": "assets/thumbnails/sql.svg",
+      "SQL, T-SQL & MySQL": "assets/thumbnails/sql.svg",
+      "Tableau Analytics": "assets/thumbnails/tableau.svg",
+      "Website Development": "assets/thumbnails/appdev.svg"
+    };
+    return map[category] || "assets/thumbnails/powerbi.svg";
+  }
+
+  // 1. Render FIVE Floating Expertise Cards (Hero Section)
+  function renderHeroFloatCards() {
+    if (!heroFloatCardsContainer || typeof FLOATING_HERO_CARDS === "undefined") return;
+
+    heroFloatCardsContainer.innerHTML = FLOATING_HERO_CARDS.map(card => `
+      <div class="hero-float-card ${card.positionClass}">
+        <div class="hero-float-title">${card.title}</div>
+        <div class="hero-float-stack">${card.stack}</div>
+      </div>
+    `).join('');
+  }
+
+  // 2. Render Hero Achievements Bar
   function renderHeroAchievements() {
     if (!heroAchieveBar || typeof ACHIEVEMENTS === "undefined") return;
 
@@ -43,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `).join('');
   }
 
-  // 2. Render Timeline Experience
+  // 3. Render Experience Timeline (With Complete Resume Bullets & Case Study Links)
   function renderTimeline() {
     if (!timelineContainer || typeof EXPERIENCE === "undefined") return;
 
@@ -61,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${exp.highlights.map(h => `<li>${h}</li>`).join('')}
           </ul>
           ${exp.relatedProject ? `
-            <div style="margin-top: 1rem;">
+            <div style="margin-top: 1.2rem;">
               <a href="#case-study-${exp.relatedProject}" class="card-link">
                 View Related Case Study →
               </a>
@@ -72,15 +102,26 @@ document.addEventListener("DOMContentLoaded", () => {
     `).join('');
   }
 
-  // 3. Render Filter Tabs
+  // 4. Render Dynamic Filter Tabs with Dynamic Counts (STEP 6)
   function renderFilterTabs() {
-    if (!filterBar || typeof CATEGORIES === "undefined") return;
+    if (!filterBar || typeof CATEGORIES === "undefined" || typeof PROJECTS === "undefined") return;
 
-    filterBar.innerHTML = CATEGORIES.map(cat => `
-      <button class="filter-tab ${cat === currentCategory ? 'active' : ''}" data-category="${cat}">
-        ${cat}
-      </button>
-    `).join('');
+    // Calculate dynamic counts
+    const categoryCounts = {};
+    categoryCounts["All"] = PROJECTS.length;
+
+    PROJECTS.forEach(p => {
+      categoryCounts[p.category] = (categoryCounts[p.category] || 0) + 1;
+    });
+
+    filterBar.innerHTML = CATEGORIES.map(cat => {
+      const count = categoryCounts[cat] || 0;
+      return `
+        <button class="filter-tab ${cat === currentCategory ? 'active' : ''}" data-category="${cat}">
+          ${cat} (${count})
+        </button>
+      `;
+    }).join('');
 
     filterBar.querySelectorAll('.filter-tab').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -93,13 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Clear all background timers for card image sliders
+  // Clear background timers for card image sliders
   function clearCardSliderTimers() {
     cardSliderTimers.forEach(t => clearInterval(t));
     cardSliderTimers = [];
   }
 
-  // 4. Render Projects Grid (With Animated Preview Slider inside cards)
+  // 5. Render Projects Grid (With Card Preview Slider)
   function renderProjects() {
     if (!projectsGrid || typeof PROJECTS === "undefined") return;
 
@@ -122,8 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     projectsGrid.innerHTML = visibleProjects.map((proj, idx) => {
-      // Slides array for card preview: Slide 1 = Category SVG, Slide 2+ = Actual screenshots
-      const slides = [proj.thumbnail, ...(proj.images || [])];
+      const slides = (proj.images && proj.images.length > 0) ? proj.images : [proj.thumbnail || getFallbackCategoryIcon(proj.category)];
       const cardId = `project-card-${idx}`;
 
       return `
@@ -133,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card-slides-container" id="slides-${cardId}">
               ${slides.map((imgSrc, slideIdx) => `
                 <div class="card-slide ${slideIdx === 0 ? 'active' : ''}">
-                  <img src="${imgSrc}" alt="${proj.title} Preview ${slideIdx + 1}" loading="lazy">
+                  <img src="${imgSrc}" alt="${proj.title} Preview ${slideIdx + 1}" loading="lazy" onerror="this.onerror=null; this.src='${getFallbackCategoryIcon(proj.category)}';">
                 </div>
               `).join('')}
             </div>
@@ -162,9 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }).join('');
 
-    // Initialize Card Preview Auto-Slider for cards with multiple images
+    // Initialize Card Preview Auto-Slider
     visibleProjects.forEach((proj, idx) => {
-      const slides = [proj.thumbnail, ...(proj.images || [])];
+      const slides = (proj.images && proj.images.length > 0) ? proj.images : [proj.thumbnail || getFallbackCategoryIcon(proj.category)];
       if (slides.length <= 1) return;
 
       const cardId = `project-card-${idx}`;
@@ -220,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 5. Render Dedicated Project Case Study Page
+  // 6. Render Dedicated Case Study Page Overlay
   window.openCaseStudy = function(projId) {
     window.location.hash = `case-study-${projId}`;
   };
@@ -251,7 +291,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderCaseStudyView(proj) {
     if (!caseStudyContent) return;
 
-    // Media items array: Video is FIRST slide if present, followed by project images
     const mediaItems = [];
 
     if (proj.video) {
@@ -260,22 +299,118 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (proj.images && proj.images.length > 0) {
       proj.images.forEach((imgSrc, i) => {
-        mediaItems.push({ type: 'image', src: imgSrc, label: `Dashboard Screenshot ${i + 1}` });
+        mediaItems.push({ type: 'image', src: imgSrc, label: `Project Screenshot ${i + 1}` });
       });
     }
 
-    // Fallback if no media exists
     if (mediaItems.length === 0) {
       mediaItems.push({ type: 'image', src: proj.thumbnail, label: 'Category Visual' });
     }
 
+    // Prepare docx sections HTML
+    let docxHtml = "";
+    if (proj.docxSections && proj.docxSections.length > 0) {
+      docxHtml = proj.docxSections.map(sec => `
+        <div class="cs-section">
+          <h2 class="cs-section-title">${sec.heading}</h2>
+          <div class="cs-text">
+            ${sec.content.map(p => {
+              if (p.startsWith('•') || p.startsWith('✔') || p.startsWith('-')) {
+                return `<li class="cs-bullet-item">${p.replace(/^[•✔-]\s*/, '')}</li>`;
+              }
+              return `<p class="cs-paragraph">${p}</p>`;
+            }).join('')}
+          </div>
+        </div>
+      `).join('');
+    } else {
+      // Fallback if legacy object keys
+      if (proj.objective) docxHtml += `<div class="cs-section"><h2 class="cs-section-title">OBJECTIVE</h2><div class="cs-text">${proj.objective}</div></div>`;
+      if (proj.problem) docxHtml += `<div class="cs-section"><h2 class="cs-section-title">PROBLEM</h2><div class="cs-text">${proj.problem}</div></div>`;
+      if (proj.solution) docxHtml += `<div class="cs-section"><h2 class="cs-section-title">SOLUTION</h2><div class="cs-text">${proj.solution}</div></div>`;
+      if (proj.result) docxHtml += `<div class="cs-section"><h2 class="cs-section-title">RESULT</h2><div class="cs-text">${proj.result}</div></div>`;
+    }
+
+    // Prepare code snippet HTML
+    let codeHtml = "";
+    if (proj.codeSnippet && proj.codeSnippet.code) {
+      codeHtml = `
+        <div class="cs-section">
+          <h2 class="cs-section-title">SOURCE CODE PREVIEW (${proj.codeSnippet.language.toUpperCase()})</h2>
+          <div class="code-editor-box">
+            <div class="code-editor-header">
+              <div class="code-editor-dots">
+                <span class="code-dot-red"></span>
+                <span class="code-dot-yellow"></span>
+                <span class="code-dot-green"></span>
+              </div>
+              <span class="code-editor-title">📄 ${proj.codeSnippet.filename}</span>
+              <button class="code-copy-btn" onclick="copyCodeSnippet(this)">Copy Code</button>
+            </div>
+            <pre class="code-editor-body"><code>${escapeHtml(proj.codeSnippet.code)}</code></pre>
+          </div>
+        </div>
+      `;
+    }
+
+    // Prepare SQL file viewer HTML (for SQL, T-SQL & MySQL category)
+    let sqlViewerHtml = "";
+    if (proj.allSqlFiles && proj.allSqlFiles.length > 0) {
+      sqlViewerHtml = `
+        <div class="cs-section">
+          <h2 class="cs-section-title">SQL SCRIPTS LIBRARY (${proj.allSqlFiles.length} FILES)</h2>
+          <div class="sql-files-nav">
+            ${proj.allSqlFiles.map((sf, i) => `
+              <button class="sql-file-tab ${i === 0 ? 'active' : ''}" data-sql-idx="${i}">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                ${sf.filename}
+              </button>
+            `).join('')}
+          </div>
+          <div class="sql-files-viewer">
+            ${proj.allSqlFiles.map((sf, i) => `
+              <div class="sql-file-panel ${i === 0 ? 'active' : ''}" data-sql-panel="${i}">
+                <div class="code-editor-box">
+                  <div class="code-editor-header">
+                    <div class="code-editor-dots">
+                      <span class="code-dot-red"></span>
+                      <span class="code-dot-yellow"></span>
+                      <span class="code-dot-green"></span>
+                    </div>
+                    <span class="code-editor-title">📄 ${sf.filename}</span>
+                    <button class="code-copy-btn" onclick="copyCodeSnippet(this)">Copy Code</button>
+                  </div>
+                  <pre class="code-editor-body"><code>${escapeHtml(sf.code)}</code></pre>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
     caseStudyContent.innerHTML = `
-      <!-- Back Navigation -->
-      <div class="cs-back-btn" onclick="closeCaseStudy()">
-        ← ALL WORK
+      <div class="cs-action-bar">
+        <button class="cs-back-btn" onclick="closeCaseStudy()">
+          ← ALL WORK
+        </button>
+        <div class="cs-links-group">
+          ${proj.githubUrl ? `
+            <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline cs-action-link">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              GitHub Repository
+            </a>
+          ` : ''}
+          ${proj.researchPaperUrl ? `
+            <a href="${proj.researchPaperUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary cs-action-link">
+              📄 Research Paper
+            </a>
+          ` : ''}
+        </div>
       </div>
 
-      <!-- Header Section -->
       <div class="cs-category-tier">${proj.category} • ${proj.tier}</div>
       <h1 class="cs-title">${proj.title}</h1>
       <p class="cs-summary">${proj.description}</p>
@@ -284,7 +419,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ${proj.tools.map(tool => `<span class="cs-tech-pill">${tool}</span>`).join('')}
       </div>
 
-      <!-- Media Showcase (Video First, then Images) -->
       <div class="cs-media-showcase">
         <div class="cs-media-stage" id="cs-media-stage">
           ${mediaItems.map((item, i) => {
@@ -299,7 +433,7 @@ document.addEventListener("DOMContentLoaded", () => {
               `;
             } else {
               return `
-                <img src="${item.src}" alt="${item.label}" class="cs-media-item ${i === 0 ? 'active' : ''}" data-idx="${i}" onclick="openLightbox('${item.src}')" style="cursor: zoom-in;">
+                <img src="${item.src}" alt="${item.label}" class="cs-media-item ${i === 0 ? 'active' : ''}" data-idx="${i}" onclick="openLightbox('${item.src}')" style="cursor: zoom-in;" onerror="this.onerror=null; this.src='${getFallbackCategoryIcon(proj.category)}';">
               `;
             }
           }).join('')}
@@ -324,109 +458,75 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
 
-      <!-- Detailed Case Study Content Grid -->
-      <div class="cs-content-grid">
-        
-        ${proj.objective ? `
-          <div class="cs-section">
-            <h2 class="cs-section-title">OBJECTIVE</h2>
-            <div class="cs-text">${proj.objective}</div>
+      <!-- ANIMATED QUICK ACTIONS BOX BELOW PROJECT MEDIA -->
+      <div class="cs-quick-actions-bar">
+        <div class="cs-action-box-card">
+          <div class="cs-action-box-info">
+            <span class="cs-action-box-badge">PROJECT REPOSITORY &amp; RESOURCES</span>
+            <h4 class="cs-action-box-title">Explore Project Source &amp; Documentation</h4>
           </div>
-        ` : ''}
-
-        ${proj.requirements ? `
-          <div class="cs-section">
-            <h2 class="cs-section-title">REQUIREMENTS</h2>
-            <div class="cs-text">${proj.requirements}</div>
-          </div>
-        ` : ''}
-
-        ${proj.purpose ? `
-          <div class="cs-section">
-            <h2 class="cs-section-title">PURPOSE</h2>
-            <div class="cs-text">${proj.purpose}</div>
-          </div>
-        ` : ''}
-
-        ${proj.problem ? `
-          <div class="cs-section">
-            <h2 class="cs-section-title">PROBLEM</h2>
-            <div class="cs-text">${proj.problem}</div>
-          </div>
-        ` : ''}
-
-        ${proj.approach ? `
-          <div class="cs-section">
-            <h2 class="cs-section-title">APPROACH</h2>
-            <div class="cs-text">${proj.approach}</div>
-          </div>
-        ` : ''}
-
-        ${proj.solution ? `
-          <div class="cs-section">
-            <h2 class="cs-section-title">SOLUTION</h2>
-            <div class="cs-text">${proj.solution}</div>
-          </div>
-        ` : ''}
-
-        ${proj.result ? `
-          <div class="cs-section">
-            <h2 class="cs-section-title">RESULT</h2>
-            <div class="cs-text" style="color: var(--brand-primary); font-weight: 700; font-size: 1.15rem;">${proj.result}</div>
-          </div>
-        ` : ''}
-
-        ${proj.technicalDetails && proj.technicalDetails.length > 0 ? `
-          <div class="cs-section">
-            <h2 class="cs-section-title">TECHNICAL IMPLEMENTATION</h2>
-            <ul class="cs-bullets">
-              ${proj.technicalDetails.map(item => `<li>${item}</li>`).join('')}
-            </ul>
-          </div>
-        ` : ''}
-
-        <!-- GitHub & Research Study Resources -->
-        <div class="cs-section">
-          <h2 class="cs-section-title">RESOURCES &amp; ARTIFACTS</h2>
-          <div class="cs-resources-grid">
-            
-            <!-- GitHub Box -->
-            <div class="cs-resource-card">
-              <div class="cs-resource-title">🐙 GitHub Repository</div>
-              <div class="cs-resource-desc">
-                ${proj.githubUrl ? 'View source code and SQL scripts on GitHub.' : 'Enterprise production repository. Access available upon request.'}
-              </div>
-              ${proj.githubUrl ? `
-                <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.6rem 1rem; align-self: flex-start;">
-                  VIEW ON GITHUB →
-                </a>
-              ` : `
-                <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">Repository Private</span>
-              `}
-            </div>
-
-            <!-- Technical Study PDF Box Placeholder -->
-            <div class="cs-resource-card">
-              <div class="cs-resource-title">📄 Technical Study / Research Paper</div>
-              <div class="cs-resource-desc">
-                ${proj.researchPdf ? 'Download complete technical study PDF.' : 'Technical research paper architecture ready. Paper document pending publication.'}
-              </div>
-              ${proj.researchPdf ? `
-                <a href="${proj.researchPdf}" target="_blank" download class="btn btn-primary" style="font-size: 0.8rem; padding: 0.6rem 1rem; align-self: flex-start;">
-                  DOWNLOAD PDF ↓
-                </a>
-              ` : `
-                <span style="font-size: 0.8rem; font-weight: 700; color: var(--brand-primary);">Paper Structure Configured</span>
-              `}
-            </div>
-
+          <div class="cs-action-box-buttons">
+            ${proj.githubUrl ? `
+              <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="cs-box-btn cs-btn-github">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                GitHub Repository
+              </a>
+            ` : ''}
+            <a href="${proj.docxFilePath || proj.researchPaperUrl || '#cs-content-grid'}" ${proj.docxFilePath ? 'download' : (proj.researchPaperUrl ? 'target="_blank" rel="noopener noreferrer"' : 'onclick="document.querySelector(\'.cs-content-grid\')?.scrollIntoView({behavior: \'smooth\'}); return false;"')} class="cs-box-btn cs-btn-casestudy">
+              📥 Download Case Study Specs
+            </a>
+            ${proj.codeSnippet ? `
+              <a href="#cs-code" class="cs-box-btn cs-btn-code" onclick="document.querySelector('.code-editor-box')?.scrollIntoView({behavior: 'smooth'})">
+                ⚡ Interactive Code Viewer
+              </a>
+            ` : ''}
           </div>
         </div>
-
       </div>
+
+      <div class="cs-content-grid">
+        ${docxHtml}
+        ${codeHtml}
+        ${sqlViewerHtml}
+      </div>
+
+      <!-- Existing Portfolio Footer Component -->
+      <footer class="contact-section cs-footer" style="margin-top: 5rem; border-radius: var(--radius-lg);">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col">
+              <h3 class="footer-brand">SONU RAJENDRAN</h3>
+              <p class="footer-tagline">Data &amp; Technology Professional</p>
+              <p class="footer-bio-short">Specializing in Power BI, SQL, Python ETL, Star Schema Modeling, Process Automation, and Full-Stack Data Applications.</p>
+            </div>
+            <div class="footer-col">
+              <h4 class="footer-col-title">NAVIGATION</h4>
+              <ul class="footer-links">
+                <li><a href="#hero" onclick="closeCaseStudy()">Home</a></li>
+                <li><a href="#projects" onclick="closeCaseStudy()">Projects</a></li>
+                <li><a href="#contact" onclick="closeCaseStudy()">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4 class="footer-col-title">CONTACT &amp; PROFILES</h4>
+              <ul class="footer-links">
+                <li><a href="mailto:sonurajendran2@gmail.com">📧 sonurajendran2@gmail.com</a></li>
+                <li><a href="https://wa.me/919136800446" target="_blank" rel="noopener noreferrer">💬 +91 9136800446</a></li>
+                <li><a href="https://linkedin.com/in/sonu-rajendran" target="_blank" rel="noopener noreferrer">💼 LinkedIn Profile</a></li>
+                <li><a href="https://github.com/Sonu2rajen" target="_blank" rel="noopener noreferrer">🐙 GitHub Repositories</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div>© 2026 Sonu Rajendran. All rights reserved.</div>
+            <div>Built with HTML5, CSS3 &amp; Vanilla JavaScript</div>
+          </div>
+        </div>
+      </footer>
     `;
 
-    // Case Study Media Carousel Navigation Setup
     let csCurrentIdx = 0;
 
     window.setCsMedia = function(idx) {
@@ -459,6 +559,21 @@ document.addEventListener("DOMContentLoaded", () => {
     window.prevCsMedia = function() {
       setCsMedia(csCurrentIdx - 1);
     };
+
+    // SQL file tab switching
+    const sqlFileTabs = document.querySelectorAll('.sql-file-tab');
+    if (sqlFileTabs.length > 0) {
+      sqlFileTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const idx = tab.getAttribute('data-sql-idx');
+          sqlFileTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          document.querySelectorAll('.sql-file-panel').forEach(p => p.classList.remove('active'));
+          const panel = document.querySelector(`.sql-file-panel[data-sql-panel="${idx}"]`);
+          if (panel) panel.classList.add('active');
+        });
+      });
+    }
   }
 
   // Lightbox Modal for Screenshots
@@ -483,29 +598,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 6. Render Certifications & Education
-  function renderCertifications() {
-    if (!certsGrid || typeof CERTIFICATIONS === "undefined") return;
-
-    certsGrid.innerHTML = CERTIFICATIONS.map(cert => `
-      <div class="cert-card reveal">
-        <div class="cert-icon">${cert.icon}</div>
-        <div>
-          <h4 class="cert-name">${cert.name}</h4>
-          <div class="cert-issuer">${cert.issuer} • <span style="color: var(--brand-primary); font-weight: 700;">${cert.status}</span></div>
+  // 7. Render Credentials: Education & Certifications (STEP 7)
+  function renderEducationAndCerts() {
+    // Render Education Grid
+    if (eduGrid && typeof EDUCATION !== "undefined") {
+      eduGrid.innerHTML = EDUCATION.map(edu => `
+        <div class="formal-edu-card reveal active">
+          <h4 class="edu-title">${edu.degree}</h4>
+          <div class="edu-institution-link">${edu.institution}</div>
+          <div class="edu-meta-line">${edu.period} &nbsp;|&nbsp; CGPA: ${edu.grade.replace('CGPA ', '')}</div>
+          <p class="edu-desc-text">${edu.details}</p>
         </div>
-      </div>
-    `).join('');
+      `).join('');
+    }
+
+    // Render Certifications Grid
+    if (certsGrid && typeof CERTIFICATIONS !== "undefined") {
+      certsGrid.innerHTML = CERTIFICATIONS.map(cert => `
+        <div class="cert-bar-card reveal active">
+          <div class="cert-bar-title">${cert.name}</div>
+          <span class="cert-issuer-badge ${cert.status.includes('Progress') ? 'status-in-progress' : ''}">${cert.issuer}${cert.status.includes('Progress') ? ' (In Progress)' : ''}</span>
+        </div>
+      `).join('');
+    }
+
+    initScrollReveal();
   }
 
-  // 7. Mobile Menu Toggle
+  // 8. Mobile Menu Toggle
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
   }
 
-  // 8. Scroll Reveal Observer & Fallback
+  // 9. Scroll Reveal Observer & Fallback
   function initScrollReveal() {
     const reveals = document.querySelectorAll('.reveal');
     
@@ -524,7 +651,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 9. Active Nav Link on Scroll
+  // 10. Active Nav Link on Scroll
   function initActiveNav() {
     const sections = document.querySelectorAll('section, footer');
     const navItems = document.querySelectorAll('.nav-link');
@@ -547,12 +674,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Helper: Escape HTML
+  function escapeHtml(text) {
+    if (!text) return '';
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  // Helper: Copy Code Snippet to Clipboard
+  window.copyCodeSnippet = function(btn) {
+    const box = btn.closest('.code-editor-box');
+    if (!box) return;
+    const codeEl = box.querySelector('code');
+    if (!codeEl) return;
+    
+    navigator.clipboard.writeText(codeEl.innerText).then(() => {
+      const originalText = btn.innerText;
+      btn.innerText = 'Copied! ✓';
+      btn.style.background = '#10B981';
+      btn.style.color = '#FFFFFF';
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy code snippet: ', err);
+    });
+  };
+
   // Initial Execution
+  renderHeroFloatCards();
   renderHeroAchievements();
   renderTimeline();
   renderFilterTabs();
   renderProjects();
-  renderCertifications();
+  renderEducationAndCerts();
+  initScrollReveal();
   initActiveNav();
   handleHashRouting();
 });

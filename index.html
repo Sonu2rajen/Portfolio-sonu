@@ -3,43 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sonu Rajendran | Data & Technology Professional Portfolio</title>
-  <meta name="description" content="Portfolio of Sonu Rajendran — Data Analyst, BI Developer, & Data Engineer. Specializing in Power BI, SQL, Python ETL, Excel VBA, and Full-Stack Automation.">
-  <meta name="keywords" content="Sonu Rajendran, Data Analyst, BI Analyst, Data Engineer, Power BI, SQL, Python, ETL, Innomotics, Sounce Retail">
+  <title>Sonu Rajendran — Data &amp; Technology Professional Portfolio</title>
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Sonu Rajendran | Data & Technology Professional">
-  <meta property="og:description" content="Turning messy business problems into dashboards, pipelines, and production systems.">
-  <meta property="og:type" content="website">
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Sonu Rajendran — Data & Technology Professional Portfolio">
+  <meta name="description" content="Portfolio of Sonu Rajendran — Executive Data Analyst & Technology Professional specializing in Power BI, SQL, Python, Data Engineering, Automation, and Full-Stack Data Applications.">
+  <meta name="keywords" content="Data Analyst, Business Intelligence Analyst, Data Engineering, Power BI, SQL, Python, DAX, Star Schema, Automation, Flutter, Spring Boot, Mumbai, Innomotics">
+  <meta name="author" content="Sonu Rajendran">
 
-  <!-- Stylesheet -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/thumbnails/powerbi.svg">
+
+  <!-- Google Fonts: Outfit (Display) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- MAIN PAGE WRAPPER (Hidden when viewing full case study page if open, or overlaid cleanly) -->
-  <div id="main-portfolio-page">
+  <!-- Background Technical Grid Canvas Overlay -->
+  <div class="tech-grid-overlay"></div>
 
-    <!-- NAVBAR -->
+  <!-- Page Wrapper -->
+  <div class="site-wrapper">
+
+    <!-- NAVBAR (CLEANED UP & ALIGNED) -->
     <nav class="navbar" id="navbar">
-      <div class="container">
-        <a href="#hero" class="brand-logo">SONU <span>RAJENDRAN</span></a>
+      <div class="container navbar-container">
+        
+        <a href="#hero" class="brand-logo">
+          <span>SONU</span> RAJENDRAN
+        </a>
+
         <ul class="nav-links">
           <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#capabilities" class="nav-link">Stack</a></li>
+          <li><a href="#capabilities" class="nav-link">What I Work With</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#methodology" class="nav-link">Methodology</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#projects" class="nav-link">Work</a></li>
-          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#credentials" class="nav-link">Education</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-        <a href="Sonu_Rajendran_Resume.pdf" target="_blank" download class="btn btn-primary">
-          Download CV
+
+        <a href="Sonu_Rajendran_Resume.pdf" target="_blank" download class="btn btn-primary nav-cv-btn">
+          <span>Resume</span>
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
           </svg>
         </a>
-        <div class="mobile-menu-toggle" id="menu-toggle">
+
+        <div class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
           <span></span>
           <span></span>
           <span></span>
@@ -51,6 +70,8 @@
     <section class="hero-section" id="hero">
       <div class="container">
         <div class="hero-grid">
+          
+          <!-- Hero Text Content -->
           <div class="hero-content">
             <div class="status-chip">
               <span class="pulse-dot"></span>
@@ -62,106 +83,170 @@
               <span class="highlight-box">I AUTOMATE.</span>
             </h1>
             <p class="hero-subtitle">
-              A Data & Technology professional working across Analytics, Data Engineering, Automation, and Application Development — turning messy business problems into dashboards, pipelines, and production systems.
+              A Data &amp; Technology professional working across Analytics, Data Engineering, Automation, and Application Development — turning complex business problems into dashboards, pipelines, and production systems.
             </p>
             <div class="hero-actions">
               <a href="Sonu_Rajendran_Resume.pdf" target="_blank" download class="btn btn-primary">
-                Download CV
+                Download Resume (PDF)
               </a>
               <a href="#projects" class="btn btn-outline">
                 See Projects →
               </a>
             </div>
           </div>
+
+          <!-- Hero Visual with 5 Floating Expertise Cards -->
           <div class="hero-visual">
+            
+            <!-- Avatar Frame -->
             <div class="avatar-wrapper">
               <img src="assets/profile_avatar.jpg" alt="Sonu Rajendran Profile Photo" class="avatar-img">
             </div>
-            <div class="stat-badge badge-top-left">
-              <div class="badge-number">45+</div>
-              <div class="badge-text">Projects<br>Shipped</div>
-            </div>
-            <div class="stat-badge badge-bottom-right">
-              <div class="badge-number">75k+</div>
-              <div class="badge-text">Records<br>Validated</div>
-            </div>
+
+            <!-- FIVE FLOATING EXPERTISE CARDS (Surrounding Avatar) -->
+            <div class="hero-float-cards-container" id="hero-float-cards">
+              <!-- Rendered dynamically by script.js -->
           </div>
         </div>
+      </div>
 
-        <!-- HERO HIGHLIGHTS / ACHIEVEMENTS BAR (Lovable Inspo Style, Antigravity Theme) -->
-        <div class="hero-achievements-bar" id="hero-achievements-bar">
-          <!-- Rendered dynamically by script.js -->
+      <!-- FULL-WIDTH HERO ACHIEVEMENTS BANNER (100% EDGE-TO-EDGE, 5 METRICS) -->
+      <div class="hero-achievements-fullwidth">
+        <div class="container">
+          <div class="hero-achievements-bar" id="hero-achievements-bar">
+            <!-- Rendered dynamically by script.js (5 metrics) -->
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT I WORK WITH (CAPABILITY PILLARS) -->
+    <!-- WHAT I WORK WITH (RESTRUCTURED 5 TECHNICAL DOMAINS) -->
     <section class="capabilities-section" id="capabilities">
       <div class="container">
-        <div class="section-label">01 // LANGUAGES &amp; TOOLS</div>
+        <div class="section-label">01 // TECHNICAL DOMAINS</div>
         <h2 class="section-title">WHAT I WORK WITH</h2>
-        <p style="color: var(--text-secondary); max-width: 600px;">
-          Core engineering pillars across Analytics, Data Pipelines, App Development, and AI Automation.
+        <p class="section-description">
+          Core technical domains aligned with real-world enterprise projects across Analytics, Data Engineering, App Platforms, and Automation.
         </p>
 
         <div class="capability-rows">
-          <!-- Row 1: Analytics & BI -->
+          
+          <!-- Domain 01: Analytics & BI -->
           <div class="capability-row reveal">
-            <div class="capability-num">01</div>
-            <div class="capability-name">Analytics &amp; BI</div>
-            <div class="pill-stack">
-              <span class="pill-tag">POWER BI</span>
-              <span class="pill-tag">SQL</span>
-              <span class="pill-tag">TABLEAU</span>
-              <span class="pill-tag">EXCEL (VBA)</span>
-              <span class="pill-tag">POWER PIVOT</span>
-              <span class="pill-tag">DAX</span>
-              <span class="pill-tag">STAR SCHEMA</span>
+            <div class="capability-header">
+              <div class="capability-num">01</div>
+              <div class="capability-name">ANALYTICS &amp; BUSINESS INTELLIGENCE</div>
+            </div>
+            <div class="capability-body">
+              <p class="capability-desc">
+                Transforming raw enterprise data into executive dashboards, KPIs, and decision-support systems using Star Schema modeling, DAX time intelligence, and interactive visual reporting.
+              </p>
+              <div class="pill-stack">
+                <span class="pill-tag">POWER BI</span>
+                <span class="pill-tag">DAX</span>
+                <span class="pill-tag">POWER QUERY</span>
+                <span class="pill-tag">TABLEAU</span>
+                <span class="pill-tag">ADVANCED EXCEL</span>
+                <span class="pill-tag">VBA</span>
+                <span class="pill-tag">POWER PIVOT</span>
+                <span class="pill-tag">DATA VISUALIZATION</span>
+                <span class="pill-tag">KPI REPORTING</span>
+                <span class="pill-tag">STAR SCHEMA</span>
+              </div>
             </div>
           </div>
 
-          <!-- Row 2: Data Engineering -->
+          <!-- Domain 02: Data Engineering & Data Management -->
           <div class="capability-row reveal">
-            <div class="capability-num">02</div>
-            <div class="capability-name">Data Engineering</div>
-            <div class="pill-stack">
-              <span class="pill-tag">PYTHON</span>
-              <span class="pill-tag">ETL PIPELINES</span>
-              <span class="pill-tag">AWS REDSHIFT</span>
-              <span class="pill-tag">APACHE SPARK</span>
-              <span class="pill-tag">POSTGRESQL</span>
-              <span class="pill-tag">SNOWFLAKE</span>
-              <span class="pill-tag">SSIS / SSRS</span>
+            <div class="capability-header">
+              <div class="capability-num">02</div>
+              <div class="capability-name">DATA ENGINEERING &amp; DATA MANAGEMENT</div>
+            </div>
+            <div class="capability-body">
+              <p class="capability-desc">
+                Building robust ETL pipelines, querying multi-table relational databases, cleansing large dataset footprints, and enforcing master data governance across enterprise storage layers.
+              </p>
+              <div class="pill-stack">
+                <span class="pill-tag">SQL</span>
+                <span class="pill-tag">T-SQL</span>
+                <span class="pill-tag">MYSQL</span>
+                <span class="pill-tag">POSTGRESQL</span>
+                <span class="pill-tag">ETL PIPELINES</span>
+                <span class="pill-tag">DATA MODELING</span>
+                <span class="pill-tag">AWS REDSHIFT</span>
+                <span class="pill-tag">SNOWFLAKE</span>
+                <span class="pill-tag">APACHE SPARK</span>
+                <span class="pill-tag">SSIS / SSRS</span>
+                <span class="pill-tag">DATAVERSE</span>
+              </div>
             </div>
           </div>
 
-          <!-- Row 3: Application Development -->
+          <!-- Domain 03: Application & Data Platform Development -->
           <div class="capability-row reveal">
-            <div class="capability-num">03</div>
-            <div class="capability-name">App Development</div>
-            <div class="pill-stack">
-              <span class="pill-tag">FLUTTER</span>
-              <span class="pill-tag">SPRING BOOT</span>
-              <span class="pill-tag">JWT AUTH</span>
-              <span class="pill-tag">DOCKER</span>
-              <span class="pill-tag">KUBERNETES</span>
-              <span class="pill-tag">REST APIS</span>
-              <span class="pill-tag">SQL SERVER</span>
+            <div class="capability-header">
+              <div class="capability-num">03</div>
+              <div class="capability-name">APPLICATION &amp; DATA PLATFORM DEVELOPMENT</div>
+            </div>
+            <div class="capability-body">
+              <p class="capability-desc">
+                Developing full-stack data applications, microservices APIs, and QR-based mobile tools that connect operational field teams directly to enterprise data repositories.
+              </p>
+              <div class="pill-stack">
+                <span class="pill-tag">FLUTTER</span>
+                <span class="pill-tag">SPRING BOOT</span>
+                <span class="pill-tag">REST APIS</span>
+                <span class="pill-tag">JWT AUTH</span>
+                <span class="pill-tag">DOCKER</span>
+                <span class="pill-tag">KUBERNETES</span>
+                <span class="pill-tag">SQL SERVER</span>
+                <span class="pill-tag">POSTGRESQL</span>
+              </div>
             </div>
           </div>
 
-          <!-- Row 4: Automation & AI -->
+          <!-- Domain 04: Automation, AI & Intelligent Workflows -->
           <div class="capability-row reveal">
-            <div class="capability-num">04</div>
-            <div class="capability-name">Automation &amp; AI</div>
-            <div class="pill-stack">
-              <span class="pill-tag">WEB SCRAPING BOTS</span>
-              <span class="pill-tag">PYTHON AUTOMATION</span>
-              <span class="pill-tag">OPENAI APIS</span>
-              <span class="pill-tag">POWER AUTOMATE</span>
-              <span class="pill-tag">EXCEL MACROS</span>
+            <div class="capability-header">
+              <div class="capability-num">04</div>
+              <div class="capability-name">AUTOMATION, AI &amp; INTELLIGENT WORKFLOWS</div>
+            </div>
+            <div class="capability-body">
+              <p class="capability-desc">
+                Automating repetitive spreadsheet tasks, building multi-platform web scraping bots, and leveraging OpenAI APIs to extract structured data from unstructured sources.
+              </p>
+              <div class="pill-stack">
+                <span class="pill-tag">PYTHON AUTOMATION</span>
+                <span class="pill-tag">WEB SCRAPING BOTS</span>
+                <span class="pill-tag">EXCEL VBA</span>
+                <span class="pill-tag">POWER AUTOMATE</span>
+                <span class="pill-tag">OPENAI / AI APIS</span>
+                <span class="pill-tag">LLM-ASSISTED WORKFLOWS</span>
+                <span class="pill-tag">DOCUMENT PARSING</span>
+              </div>
             </div>
           </div>
+
+          <!-- Domain 05: Cloud & Infrastructure -->
+          <div class="capability-row reveal">
+            <div class="capability-header">
+              <div class="capability-num">05</div>
+              <div class="capability-name">CLOUD &amp; INFRASTRUCTURE</div>
+            </div>
+            <div class="capability-body">
+              <p class="capability-desc">
+                Staging and loading analytics data in cloud data warehouses, containerizing services, and managing cloud storage buckets for enterprise pipeline scalability.
+              </p>
+              <div class="pill-stack">
+                <span class="pill-tag">AWS (REDSHIFT, S3)</span>
+                <span class="pill-tag">AZURE FUNDAMENTALS</span>
+                <span class="pill-tag">DOCKER</span>
+                <span class="pill-tag">KUBERNETES</span>
+                <span class="pill-tag">GIT / GITHUB</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -176,10 +261,13 @@
             </div>
           </div>
           <div class="about-content-col reveal">
-            <div class="section-label">02 // ABOUT ME</div>
-            <h2 class="section-title">DESIGNING SOLUTIONS, NOT JUST DASHBOARDS</h2>
+            <div class="section-label">02 // PROFESSIONAL BACKGROUND</div>
+            <h2 class="section-title">BRIDGING DATA ENGINEERING &amp; BUSINESS STRATEGY</h2>
             <p class="about-bio">
-              I am a Data &amp; Technology professional with a Master's in Computer Science and nearly 2 years of hands-on experience across manufacturing (Innomotics India Ltd.) and e-commerce (Sounce Retail). I bridge the gap between technical data engineering and business strategy — turning complex data sources into actionable BI, automated trackers, and production applications.
+              I am a Data &amp; Technology professional with a <strong>Master's in Computer Science</strong> (CGPA 8.4) and nearly 2 years of enterprise experience across heavy manufacturing (<strong>Innomotics India Ltd.</strong>) and multi-channel e-commerce (<strong>Sounce Retail</strong>).
+            </p>
+            <p class="about-bio" style="margin-top: -1rem;">
+              I do more than create static reports — I work across the complete data lifecycle: extracting and engineering data from complex sources, building Star Schema models, automating manual operational bottlenecks, and delivering decision-ready Power BI dashboards and full-stack software applications.
             </p>
 
             <div class="stats-grid">
@@ -203,7 +291,7 @@
 
             <div>
               <a href="Sonu_Rajendran_Resume.pdf" target="_blank" download class="btn btn-primary">
-                Download Full CV
+                Download Resume (PDF)
               </a>
             </div>
           </div>
@@ -211,32 +299,169 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION (TIMELINE) -->
-    <section class="experience-section" id="experience">
+    <!-- WORKING METHODOLOGY SECTION (TWO COMPLEMENTARY TRACKS SIDE-BY-SIDE) -->
+    <section class="process-section" id="methodology">
       <div class="container">
-        <div class="section-label">03 // CAREER PATH</div>
-        <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <div class="section-label" style="justify-content: center;">03 // PHILOSOPHY</div>
+          <h2 class="section-title">WORKING METHODOLOGY</h2>
+          <p class="section-description" style="margin: 0 auto;">
+            My dual-spectrum working methodology covering both Analytics Intelligence and Full-Stack Application/Data Platform Engineering.
+          </p>
+        </div>
 
-        <div class="timeline" id="timeline-container">
-          <!-- Rendered by script.js -->
+        <div class="methodology-dual-grid">
+          
+          <!-- LEFT METHODOLOGY TRACK: ANALYTICS & BI METHODOLOGY -->
+          <div class="methodology-column reveal">
+            <div class="methodology-col-header">
+              <div class="methodology-track-tag analytics-tag">DATA &amp; ANALYTICS</div>
+              <h3 class="methodology-col-title">ANALYTICS &amp; BI METHODOLOGY</h3>
+            </div>
+            
+            <div class="methodology-cards-stack">
+              
+              <div class="process-card">
+                <div class="process-icon-wrapper">01</div>
+                <div>
+                  <h4 class="process-title">01 — Understand Business Needs</h4>
+                  <p class="process-desc">Understand stakeholders, requirements, KPIs and decision objectives before writing queries or code.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper">02</div>
+                <div>
+                  <h4 class="process-title">02 — Extract &amp; Engineer Data</h4>
+                  <p class="process-desc">Query SQL databases, connect APIs, scrape web sources, and stage data through clean ETL pipelines.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper">03</div>
+                <div>
+                  <h4 class="process-title">03 — Clean, Model &amp; Analyze</h4>
+                  <p class="process-desc">Wrangle data with Power Query/Pandas, build Star Schema models, write DAX, and run exploratory analysis.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper">04</div>
+                <div>
+                  <h4 class="process-title">04 — Automate Workflows</h4>
+                  <p class="process-desc">Automate manual reports using Excel VBA macros, Python automation scripts, and scheduled data refreshes.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper">05</div>
+                <div>
+                  <h4 class="process-title">05 — Visualize &amp; Deliver</h4>
+                  <p class="process-desc">Develop interactive Power BI and Tableau dashboards with executive KPI cards and dynamic drill-downs.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper">06</div>
+                <div>
+                  <h4 class="process-title">06 — Validate &amp; Improve</h4>
+                  <p class="process-desc">Validate data quality against ground-truth systems, refine business logic, and continuously iterate based on feedback.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RIGHT METHODOLOGY TRACK: APPLICATION & DATA PLATFORM METHODOLOGY -->
+          <div class="methodology-column reveal">
+            <div class="methodology-col-header">
+              <div class="methodology-track-tag platform-tag">SOFTWARE &amp; PLATFORMS</div>
+              <h3 class="methodology-col-title">APPLICATION &amp; DATA PLATFORM METHODOLOGY</h3>
+            </div>
+            
+            <div class="methodology-cards-stack">
+              
+              <div class="process-card">
+                <div class="process-icon-wrapper platform-icon">01</div>
+                <div>
+                  <h4 class="process-title">01 — Discover &amp; Architect</h4>
+                  <p class="process-desc">Understand requirements, define scalable system architecture, data flow diagrams, and end-to-end solution design.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper platform-icon">02</div>
+                <div>
+                  <h4 class="process-title">02 — Design the Data Layer</h4>
+                  <p class="process-desc">Design relational schemas (PostgreSQL / SQL Server), table relationships, indexing, and microservices API data contracts.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper platform-icon">03</div>
+                <div>
+                  <h4 class="process-title">03 — Build the Application</h4>
+                  <p class="process-desc">Develop cross-platform client UIs (Flutter) and secure backend REST APIs (Spring Boot / Python) for business tools.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper platform-icon">04</div>
+                <div>
+                  <h4 class="process-title">04 — Integrate &amp; Secure</h4>
+                  <p class="process-desc">Connect APIs to databases and hardware scanners; implement JWT authentication, authorization, and secure data flows.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper platform-icon">05</div>
+                <div>
+                  <h4 class="process-title">05 — Containerize, Test &amp; Deploy</h4>
+                  <p class="process-desc">Containerize services with Docker, orchestrate on Kubernetes, execute ACP security validation, and deploy software.</p>
+                </div>
+              </div>
+
+              <div class="process-card">
+                <div class="process-icon-wrapper platform-icon">06</div>
+                <div>
+                  <h4 class="process-title">06 — Maintain &amp; Evolve</h4>
+                  <p class="process-desc">Monitor operational logs, troubleshoot issues, document APIs, and continuously improve production platforms.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (FILTERABLE GRID WITH ANIMATED PREVIEW CARDS) -->
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <div class="section-label">04 // CAREER PATH</div>
+        <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+        <div class="timeline" id="timeline-container">
+          <!-- Rendered dynamically by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
     <section class="projects-section" id="projects">
       <div class="container">
         <div style="text-align: center;">
-          <div class="section-label" style="justify-content: center;">04 // SHOWCASE</div>
+          <div class="section-label" style="justify-content: center;">05 // SHOWCASE</div>
           <h2 class="section-title">DIGITAL PRODUCT &amp; ANALYTICS SHOWCASES</h2>
-          <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto;">
-            Explore my complete portfolio of professional, project, and practice work. Hover over cards for live media previews or click any project to view its full case study.
+          <p class="section-description" style="margin: 0 auto;">
+            Explore my portfolio of professional, project, and practice work. Hover over cards for live media previews or click any project to view its complete case study.
           </p>
         </div>
 
-        <!-- Filter Buttons -->
+        <!-- Dynamic Filter Buttons with Counts -->
         <div class="filter-bar" id="filter-bar">
-          <!-- Rendered by script.js -->
+          <!-- Rendered dynamically by script.js -->
         </div>
 
         <!-- Projects Grid -->
@@ -253,50 +478,71 @@
       </div>
     </section>
 
-    <!-- HOW I WORK (PROCESS SECTION) -->
-    <section class="process-section" id="process">
+
+
+    <!-- CERTIFICATIONS & EDUCATION SECTION (REDESIGNED BASED ON REFERENCE INSPIRATION IMAGE) -->
+    <section class="certifications-section" id="credentials">
       <div class="container">
-        <div style="text-align: center;">
-          <div class="section-label" style="justify-content: center;">05 // METHODOLOGY</div>
-          <h2 class="section-title">HOW I WORK</h2>
+        
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <div class="section-label" style="justify-content: center;">06 // CREDENTIALS</div>
+          <h2 class="section-title title-with-badge">
+            Education &amp; <span class="header-pill-badge">Certifications</span>
+          </h2>
         </div>
 
-        <div class="process-grid">
-          <div class="process-card reveal">
-            <div class="process-icon-wrapper">🎯</div>
-            <h3 class="process-title">1. Understand the Problem</h3>
-            <p class="process-desc">
-              Analyze underlying business goals and root causes before writing code. Define success metrics, data availability, and stakeholder expectations upfront.
-            </p>
+        <div class="credentials-layout-v3">
+          
+          <!-- Left Column: Formal Education -->
+          <div class="credentials-col">
+            <h3 class="col-subheading">Formal Education</h3>
+            <div class="edu-cards-stack" id="edu-grid">
+              
+              <div class="formal-edu-card reveal active">
+                <h4 class="edu-title">Master of Computer Science (MSc)</h4>
+                <div class="edu-institution-link">SIES College of Arts, Science &amp; Commerce</div>
+                <div class="edu-meta-line">2023 – 2025 &nbsp;|&nbsp; CGPA: 8.4 / 10.0</div>
+                <p class="edu-desc-text">Advanced software engineering, database architectures, enterprise data modeling, machine learning fundamentals, and distributed system development.</p>
+              </div>
+
+              <div class="formal-edu-card reveal active">
+                <h4 class="edu-title">Bachelor of Computer Science (BSc)</h4>
+                <div class="edu-institution-link">SIES College of Arts, Science &amp; Commerce</div>
+                <div class="edu-meta-line">2020 – 2023 &nbsp;|&nbsp; CGPA: 8.6 / 10.0</div>
+                <p class="edu-desc-text">Computer science core foundations, object-oriented programming, data structures, algorithms, relational database design (SQL), and web technologies.</p>
+              </div>
+
+            </div>
           </div>
 
-          <div class="process-card reveal">
-            <div class="process-icon-wrapper">⚙️</div>
-            <h3 class="process-title">2. Build, Model &amp; Validate</h3>
-            <p class="process-desc">
-              Clean raw data, design Star Schema data models, write performant SQL, and develop reliable ETL or full-stack software. Rigorously validate data quality.
-            </p>
+          <!-- Right Column: Certifications & Training -->
+          <div class="credentials-col">
+            <h3 class="col-subheading">Certifications &amp; Training</h3>
+            <div class="cert-bars-stack" id="certs-grid">
+              
+              <div class="cert-bar-card reveal active">
+                <div class="cert-bar-title">Google Data Analytics Certificate</div>
+                <span class="cert-issuer-badge">Google</span>
+              </div>
+
+              <div class="cert-bar-card reveal active">
+                <div class="cert-bar-title">PL-300: Microsoft Power BI Data Analyst</div>
+                <span class="cert-issuer-badge status-in-progress">Microsoft (In Progress)</span>
+              </div>
+
+              <div class="cert-bar-card reveal active">
+                <div class="cert-bar-title">Python for Data Science</div>
+                <span class="cert-issuer-badge">NPTEL</span>
+              </div>
+
+              <div class="cert-bar-card reveal active">
+                <div class="cert-bar-title">SQL for Data Science</div>
+                <span class="cert-issuer-badge">Coursera</span>
+              </div>
+
+            </div>
           </div>
 
-          <div class="process-card reveal">
-            <div class="process-icon-wrapper">🚀</div>
-            <h3 class="process-title">3. Ship, Document &amp; Iterate</h3>
-            <p class="process-desc">
-              Deploy dashboards and production systems with automated refresh schedules. Provide clear documentation and train stakeholders to drive adoption.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS SECTION -->
-    <section class="certifications-section" id="certifications">
-      <div class="container">
-        <div class="section-label">06 // CREDENTIALS</div>
-        <h2 class="section-title">CERTIFICATIONS &amp; EDUCATION</h2>
-
-        <div class="certs-grid" id="certs-grid">
-          <!-- Rendered by script.js -->
         </div>
       </div>
     </section>
@@ -304,10 +550,12 @@
     <!-- CONTACT & FOOTER SECTION -->
     <footer class="contact-section" id="contact">
       <div class="container">
+        
+        <!-- CTA Banner -->
         <div class="cta-box reveal">
           <h2 class="cta-title">GOT A ROLE OR PROJECT IN MIND? LET'S TALK.</h2>
           <p class="cta-desc">
-            Whether you're looking for a Data Analyst, BI Developer, or Data/Software Engineer — I'm ready to ship real solutions for your team.
+            Whether you're looking for a Data Analyst, BI Specialist, Data Engineer, or Automation/Software Professional — I am ready to ship real solutions for your team.
           </p>
 
           <div class="cta-contact-actions">
@@ -321,42 +569,71 @@
             </a>
 
             <!-- WhatsApp Action -->
-            <a href="https://wa.me/919136800446" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="color: #FFFFFF; border-color: var(--accent-lime); background: rgba(212, 245, 80, 0.15);">
+            <a href="https://wa.me/919136800446" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="color: #FFFFFF; border-color: var(--brand-accent); background: rgba(245, 185, 66, 0.15);">
               💬 Chat on WhatsApp (+91 9136800446)
             </a>
           </div>
         </div>
 
-        <div class="contact-info-grid">
-          <a href="mailto:sonurajendran2@gmail.com" class="contact-item">
-            <div class="contact-icon">📧</div>
-            <div class="contact-label">Email (Primary)</div>
-            <div class="contact-val">sonurajendran2@gmail.com</div>
-          </a>
+        <!-- Footer 4-Column Grid -->
+        <div class="footer-grid">
+          
+          <!-- Col 1: Brand & Tagline -->
+          <div class="footer-col">
+            <h3 class="footer-brand">SONU RAJENDRAN</h3>
+            <p class="footer-tagline">Data &amp; Technology Professional</p>
+            <p class="footer-bio-short">
+              Specializing in Power BI, SQL, Python ETL, Star Schema Modeling, Process Automation, and Full-Stack Data Applications.
+            </p>
+          </div>
 
-          <a href="https://wa.me/919136800446" target="_blank" rel="noopener noreferrer" class="contact-item">
-            <div class="contact-icon">💬</div>
-            <div class="contact-label">Phone / WhatsApp</div>
-            <div class="contact-val">+91 9136800446</div>
-          </a>
+          <!-- Col 2: Navigation Links -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">NAVIGATION</h4>
+            <ul class="footer-links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#capabilities">What I Work With</a></li>
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#methodology">Methodology</a></li>
+              <li><a href="#experience">Professional Experience</a></li>
+              <li><a href="#projects">Project Showcases</a></li>
+              <li><a href="#credentials">Education &amp; Certs</a></li>
+            </ul>
+          </div>
 
-          <a href="https://linkedin.com/in/sonu-rajendran" target="_blank" rel="noopener noreferrer" class="contact-item">
-            <div class="contact-icon">💼</div>
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-val">linkedin.com/in/sonu-rajendran</div>
-          </a>
+          <!-- Col 3: Core Skills -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">CORE SKILLS</h4>
+            <ul class="footer-links">
+              <li><a href="#capabilities">Power BI &amp; DAX</a></li>
+              <li><a href="#capabilities">SQL &amp; Query Optimization</a></li>
+              <li><a href="#capabilities">Python ETL &amp; Pandas</a></li>
+              <li><a href="#capabilities">Star Schema Modeling</a></li>
+              <li><a href="#capabilities">Tableau Visualization</a></li>
+              <li><a href="#capabilities">Excel VBA Automation</a></li>
+              <li><a href="#capabilities">Flutter &amp; Spring Boot</a></li>
+            </ul>
+          </div>
 
-          <a href="https://github.com/Sonu2rajen" target="_blank" rel="noopener noreferrer" class="contact-item">
-            <div class="contact-icon">🐙</div>
-            <div class="contact-label">GitHub</div>
-            <div class="contact-val">github.com/Sonu2rajen</div>
-          </a>
+          <!-- Col 4: Contact Details -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">CONTACT &amp; PROFILES</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:sonurajendran2@gmail.com">📧 sonurajendran2@gmail.com</a></li>
+              <li><a href="https://wa.me/919136800446" target="_blank" rel="noopener noreferrer">💬 +91 9136800446</a></li>
+              <li><a href="https://linkedin.com/in/sonu-rajendran" target="_blank" rel="noopener noreferrer">💼 LinkedIn Profile</a></li>
+              <li><a href="https://github.com/Sonu2rajen" target="_blank" rel="noopener noreferrer">🐙 GitHub Repositories</a></li>
+              <li><span style="color: var(--text-muted);">📍 Mumbai, Maharashtra, India</span></li>
+            </ul>
+          </div>
+
         </div>
 
         <div class="footer-bottom">
           <div>© 2026 Sonu Rajendran. All rights reserved.</div>
-          <div>Data &amp; Technology Professional • Mumbai, India</div>
+          <div>Built with HTML5, CSS3 &amp; Vanilla JavaScript • High-Performance Data Architecture</div>
         </div>
+
       </div>
     </footer>
   </div>
