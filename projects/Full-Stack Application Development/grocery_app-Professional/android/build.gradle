@@ -1,0 +1,36 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    afterEvaluate { project ->
+        if (project.extensions.findByName("android") != null) {
+            project.android.buildFeatures.buildConfig = true
+        }
+    }
+}
+subprojects {
+    plugins.withId("com.android.library") {
+        def manifestFile = project.file("src/main/AndroidManifest.xml")
+        if (manifestFile.exists()) {
+            def manifestPackage = new XmlSlurper().parse(manifestFile).@package.text()
+            if (manifestPackage) {
+                project.android.namespace = manifestPackage
+            }
+        }
+    }
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.layout.buildDirectory
+}
