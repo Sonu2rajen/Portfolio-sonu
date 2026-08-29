@@ -7,16 +7,51 @@
 ehthumbs.db
 Thumbs.db
 
-# IDE & Editor files
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*.iml
 
-# Temporary & System files
+# Python
+**/venv/
+**/.venv/
+**/__pycache__/
+*.py[cod]
+*.pyd
+*.dll
+
+# Python generated and local data
 *.log
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment and secrets
+.env
+.env.*
+
+# Large media
+**/*.mp4
+**/*.mov
+**/*.avi
+**/*.mkv
+**/*.webm
+
+# Archives and executables
+*.zip
+*.rar
+*.7z
+*.exe
+
+# Build and generated folders
+**/build/
+**/dist/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Temporary files
 scratch/
 .system_generated/
-
-# Large media source archives (if over 100MB)
-projects/**/*.mp4
