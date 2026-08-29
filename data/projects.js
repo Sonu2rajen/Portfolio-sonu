@@ -41,8 +41,8 @@ const ACHIEVEMENTS = [
     "label": "Records Validated (Global Governance)"
   },
   {
-    "val": "130+",
-    "label": "Enterprise Contracts Restructured"
+    "val": "90%",
+    "label": "Processing Time Cut via Automation (3,000+ SKUs)"
   },
   {
     "val": "45+",
@@ -174,6 +174,11 @@ const CERTIFICATIONS = [
   }
 ];
 
+
+const CATEGORY_DESCRIPTIONS = {
+  "AI & ML Models": "Practical machine learning and AI-API projects — applying Python, Scikit-learn, and OpenAI APIs to real automation and analysis problems."
+};
+
 const PROJECTS = [
   {
     "id": "hr-dashboard-professional",
@@ -183,7 +188,7 @@ const PROJECTS = [
     "tools": [
       "Power BI & SQL EDA"
     ],
-    "outcome": "Delivered comprehensive Power BI & SQL EDA project.",
+    "outcome": "MySQL data cleaning, SQL EDA, and 2-page Power BI workforce analytics dashboard.",
     "description": "A complete analytics workflow from raw employee data to management-ready workforce intelligence Project Classification Analytics Workflow",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Power-BI-SQL-EDA/tree/main/HR-Dashboard-Professional",
@@ -861,7 +866,7 @@ const PROJECTS = [
     "tools": [
       "Power BI & SQL EDA"
     ],
-    "outcome": "Delivered comprehensive Power BI & SQL EDA project.",
+    "outcome": "Installed base asset intelligence and governance reporting across India's industrial drive footprint.",
     "description": "Build an executive-ready Installed Base intelligence dashboard for India that converts a detailed asset master dataset into a clear view of the industrial footprint, product portfolio, customer concentration, installation trends and data reliability. The solution is designed arou...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Power-BI-SQL-EDA/tree/main/Ibase-India-Dashboard-Professional",
@@ -1131,7 +1136,7 @@ const PROJECTS = [
     "tools": [
       "Power BI & Snowflake"
     ],
-    "outcome": "Delivered comprehensive Power BI & Snowflake project.",
+    "outcome": "Star Schema data model and Snowflake SQL analytics for gym equipment sales.",
     "description": "PROFESSIONAL PROJECT • POWER BI DATA MODEL • GYM EQUIPMENT SALES ANALYTICS The objective of this project is to structure gym-equipment sales data into a Power BI analytical model and use the model to analyze sales value across time and product categories. The supplied PBIX contai...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Power-BI-Snowflake/tree/main/Data-modelling-STAR%20schema-Professional",
@@ -1366,7 +1371,7 @@ const PROJECTS = [
       "Power BI",
       "Snowflake"
     ],
-    "outcome": "Delivered comprehensive Power BI & Snowflake project.",
+    "outcome": "Consolidated multi-platform e-commerce sales into one Power BI reporting layer.",
     "description": "PROFESSIONAL PROJECT • SNOWFLAKE SQL • POWER BI • E-COMMERCE SALES ANALYTICS Build a professional sales-analytics dashboard that consolidates multi-platform e-commerce performance into an interactive Power BI reporting layer. The solution is designed to turn transactional sales d...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Power-BI-Snowflake/tree/main/Sounce-Sales-Dashboard-sql_x_snowflake_x_Power-bi-Professional",
@@ -1606,7 +1611,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Interactive Tableau view of call-center operations and SLA performance.",
     "description": "TABLEAU • INTERACTIVE BI • OPERATIONAL & CUSTOMER EXPERIENCE ANALYTICS Tableau • KPI monitoring • Time-series analysis • SLA / response-time analysis • Geographic analysis • Interactive dashboard design This portfolio Tableau project is an interactive Call Center Performance & Se...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/Call-Center-Dashboard",
@@ -1931,7 +1936,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Multi-source COVID-19 analytics across India's states and demographics.",
     "description": "TABLEAU • PUBLIC HEALTH ANALYTICS • GEOGRAPHIC & MULTI-SOURCE ANALYSIS Tableau • Public-health analytics • Geographic visualization • Vaccination • Testing • Demographics This portfolio Tableau project is an interactive COVID-19 in India Dashboard Analysis that brings together mu...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/COVID-19-India-Dashboard-Analysis",
@@ -2223,7 +2228,7 @@ const PROJECTS = [
     "tools": [
       "Excel Analytics"
     ],
-    "outcome": "Delivered comprehensive Excel Analytics project.",
+    "outcome": "Excel PivotTables and interactive slicer analysis of call center response frequency.",
     "description": "Excel Analytics • PivotTables • Slicers • Dashboard Design Portfolio Project Description Transform 32,941 row-level call-center records from October 2020 into a structured, management-friendly analytical dashboard that makes service demand, customer sentiment, channel usage, SLA ...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Excel-Analytics-Dashboards/tree/main/Call-Center-Frequency-insights-Dashboard",
@@ -2414,7 +2419,7 @@ const PROJECTS = [
     "tools": [
       "Excel Analytics"
     ],
-    "outcome": "Delivered comprehensive Excel Analytics project.",
+    "outcome": "Interactive Excel dashboard analyzing coffee sales patterns, revenue, and customer trends.",
     "description": "Excel Analytics • Sales Analysis • Interactive Reporting Portfolio Project This project demonstrates how Microsoft Excel can transform relational-style transactional data into an interactive sales-analysis dashboard. The source is organized across three logical tables — Orders, C...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Excel-Analytics-Dashboards/tree/main/coffee-sales-DASHBOARD",
@@ -2589,7 +2594,7 @@ const PROJECTS = [
     "tools": [
       "Full-Stack Development"
     ],
-    "outcome": "Delivered comprehensive Full-Stack Development project.",
+    "outcome": "Full-stack e-commerce app UI built end to end.",
     "description": "eKart App — Android E-Commerce Application Concept Portfolio Project | Java • Android SDK • Material UI • Gradle eKart App is an Android-based shopping application concept designed as a modern e-commerce storefront for fashion and lifestyle products. The project combines a premiu...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Full-Stack-Application-Development/tree/main/ekart-app",
@@ -2798,7 +2803,7 @@ const PROJECTS = [
     "tools": [
       "Full-Stack Development"
     ],
-    "outcome": "Delivered comprehensive Full-Stack Development project.",
+    "outcome": "Flutter mobile grocery shopping app with Firebase backend and dynamic cart features.",
     "description": "Grocery App — Flutter Mobile Shopping Application Portfolio Project | Flutter • Dart • Firebase • Provider Grocery App is a Flutter-based mobile grocery shopping application designed around a fast, visual shopping journey. The application supports product discovery, category brow...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Full-Stack-Application-Development/tree/main/grocery_app-Professional",
@@ -3002,7 +3007,7 @@ const PROJECTS = [
       "SQL EDA & Data Handling",
       "SQL"
     ],
-    "outcome": "Delivered comprehensive SQL EDA & Data Handling project.",
+    "outcome": "SQL Server exploratory analysis evaluating customer purchasing behavior and RFM segmentation.",
     "description": "Microsoft SQL Server • Customer Analytics • Exploratory Data Analysis • Window Functions • CTEs • Aggregations • JOINs This SQL exploratory data analysis project uses the Danny's Diner case study to analyze customer visiting patterns, spending, menu preferences, membership behavi...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/SQL-EDA-Advanced-Data-Handling/tree/main/Customer-Behaviour-Analysis-SQL-EDA",
@@ -3240,7 +3245,7 @@ const PROJECTS = [
       "SQL EDA & Data Handling",
       "SQL"
     ],
-    "outcome": "Delivered comprehensive SQL EDA & Data Handling project.",
+    "outcome": "Financial SQL EDA examining customer node allocation, transaction frequency, and regional metrics.",
     "description": "Financial analytics • Relational data modelling • Customer nodes • Transactions • Regional analysis This SQL EDA project establishes a Microsoft SQL Server database named `data_bank` for financial customer and transaction analysis. The relational model separates regional referenc...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/SQL-EDA-Advanced-Data-Handling/tree/main/Data-Bank-Financial-Analysis-master-SQL-EDA-Professional",
@@ -3872,7 +3877,7 @@ const PROJECTS = [
       "Python EDA",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Python EDA project.",
+    "outcome": "PySpark and Pandas EDA analyzing Amazon electronics pricing and product metrics.",
     "description": "Amazon electronics/product intelligence using PySpark, Pandas and distributed-style analytical processing This professional project demonstrates large-scale data analytics using a 5,319,980-row and 34-column Amazon electronics/product dataset. The notebook compares conventional P...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-EDA/tree/main/big-data-analytics-PYTHON-EDA-Professional",
@@ -4147,7 +4152,7 @@ const PROJECTS = [
     "tools": [
       "Python EDA"
     ],
-    "outcome": "Delivered comprehensive Python EDA project.",
+    "outcome": "Python exploratory data analysis of bike-sharing trip patterns and user demographics.",
     "description": "User behaviour, trip patterns, demographic segmentation and ride-distance analysis for a bike-sharing system in the greater San Francisco Bay Area This project analyzes individual rides from the FordGoBike bike-sharing system covering the greater San Francisco Bay Area for Februa...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-EDA/tree/main/FordGoBike-sales-eda",
@@ -4424,7 +4429,7 @@ const PROJECTS = [
     "tools": [
       "AI & ML Models"
     ],
-    "outcome": "Delivered comprehensive AI & ML Models project.",
+    "outcome": "Machine learning classification model predicting heart stroke risk from clinical attributes.",
     "description": "Heart Stroke Prediction using Machine Learning AI & ML Models  •  Classification  •  Python  •  Machine Learning Develop a machine-learning classification solution that estimates stroke risk from a set of demographic, health, lifestyle and clinical attributes. The project covers ...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/AI-ML-Models/tree/main/heart-stroke-classifier",
@@ -4576,7 +4581,7 @@ const PROJECTS = [
     "tools": [
       "AI & ML Models"
     ],
-    "outcome": "Delivered comprehensive AI & ML Models project.",
+    "outcome": "Deep learning CNN model for dermatoscopic image classification of skin lesions.",
     "description": "Professional Project • AI & ML Models Develop a deep-learning based image classification system for skin-lesion analysis, using dermatoscopic image data to identify patterns associated with different skin-cancer classes. The project combines image preprocessing, convolutional neu...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/AI-ML-Models/tree/main/Skin-Cancer-Prediction",
@@ -4727,7 +4732,7 @@ const PROJECTS = [
       "Automation & Bots",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Automation & Bots project.",
+    "outcome": "Python automation script generating Flipkart Model-ID documents via Word Mail Merge.",
     "description": "Professional Automation Project • Python • Microsoft Word Mail Merge • Excel Build a Python-based document automation workflow that reads product records from an Excel data source, performs a Word mail merge for every record, and automatically produces the required document and P...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/AI-Automation-Professional-Bots/tree/main/Flipkart-Bottt(Model_id)-Professional",
@@ -4921,7 +4926,7 @@ const PROJECTS = [
       "Automation & Bots",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Automation & Bots project.",
+    "outcome": "Automated Flipkart part-number label generation script for catalog processing.",
     "description": "Flipkart Part Number Label Generation Automation Python Automation | Excel → Microsoft Word Mail Merge → DOCX + PDF Build a Python automation bot that reads product records from an Excel input, maps each populated row into a Microsoft Word mail-merge template, and produces indivi...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/AI-Automation-Professional-Bots/tree/main/Flipkart-Bottt(Model_no)-Professional",
@@ -5116,7 +5121,7 @@ const PROJECTS = [
       "Python Scraper Bots",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Python Scraper Bots project.",
+    "outcome": "Python scraper automating product discovery, price extraction, and rating collection from Amazon.",
     "description": "Automated product discovery, HTML parsing, attribute extraction and structured CSV data delivery This project demonstrates a Python-based web-scraping pipeline for collecting mechanical-keyboard product information from an Amazon product-search environment. Instead of manually vi...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-Scraper-Bots/tree/main/amazon-web-scrapper-Professional",
@@ -5370,7 +5375,7 @@ const PROJECTS = [
     "tools": [
       "Python Scraper Bots"
     ],
-    "outcome": "Delivered comprehensive Python Scraper Bots project.",
+    "outcome": "Python resume parsing script extracting skills and contact info into structured data.",
     "description": "Resume Parsing System Python-Based Resume Upload, Parsing & Candidate Management Application Build a Python-based resume parsing application that accepts PDF and DOCX resumes, processes the uploaded document, extracts candidate information, stores the parsed candidate record, and...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-Scraper-Bots/tree/main/resume-parser-Professional",
@@ -5556,7 +5561,7 @@ const PROJECTS = [
     "tools": [
       "Advanced Data Engineering"
     ],
-    "outcome": "Delivered comprehensive Advanced Data Engineering project.",
+    "outcome": "End-to-end AWS Redshift cloud data warehouse and ETL pipeline for song-play analytics.",
     "description": "SPARKIFY SONG-PLAY ANALYTICS • END-TO-END CLOUD ETL & STAR-SCHEMA PROJECT The project builds a complete cloud data warehouse for Sparkify's song-play analytics. Sparkify's raw song metadata and user activity logs are stored as JSON files in Amazon S3. The solution moves that semi...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Advanced-Data-Engineering/tree/main/aws-redshift-project",
@@ -5797,7 +5802,7 @@ const PROJECTS = [
     "tools": [
       "Advanced Data Engineering"
     ],
-    "outcome": "Delivered comprehensive Advanced Data Engineering project.",
+    "outcome": "Spark ETL pipeline processing JSON log data into analytical parquet tables on cloud storage.",
     "description": "The project builds an end-to-end ETL pipeline for Sparkify's song-play analytics environment. The pipeline extracts raw song metadata and application activity logs from Amazon S3, processes the datasets with Apache Spark, transforms them into analytical fact and dimension tables,...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Advanced-Data-Engineering/tree/main/data-lake-ETL-with-Spark",
@@ -6046,7 +6051,7 @@ const PROJECTS = [
       "SQL",
       "Docker"
     ],
-    "outcome": "Delivered comprehensive Docker & SQL Pipelines project.",
+    "outcome": "Dockerized SQLite database pipeline and automated SQL testing for automotive sales data.",
     "description": "PROFESSIONAL PROJECT • SQL • SQLITE • DOCKER • GITHUB ACTIONS • END-TO-END DATA EXPLORATION Build an end-to-end, containerized SQL data-analysis environment for an automotive sales database. The project starts with database schema creation and sample data loading, then progresses...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Docker-SQL-EDA-Pipelines/tree/main/docker-sql-pipeline-Professional",
@@ -6346,7 +6351,7 @@ const PROJECTS = [
     "tools": [
       "Website Development"
     ],
-    "outcome": "Delivered comprehensive Website Development project.",
+    "outcome": "Interactive web interface for EV charging station locator and booking slot status.",
     "description": "PROFESSIONAL PROJECT • FRONT-END DEVELOPMENT • JAVASCRIPT • INTERACTIVE MAPS • ROUTE PLANNING • GEOLOCATION EV Recharge Bunk is a web-based electric-vehicle navigation and charging-station discovery application developed to make EV travel easier by helping users identify charging...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Website-Full-Stack-Development/tree/main/EV-recharge_bunk-Professional",
@@ -6708,7 +6713,7 @@ const PROJECTS = [
     "tools": [
       "Website Development"
     ],
-    "outcome": "Delivered comprehensive Website Development project.",
+    "outcome": "Responsive web application frontend for fitness membership and workout tracking.",
     "description": "PROFESSIONAL PROJECT • RESPONSIVE WEB DEVELOPMENT • HTML • CSS • JAVASCRIPT The objective of this project is to build a professional web-based fitness and gym experience that presents gym services, fitness programs, trainers, membership plans and customer feedback through a struc...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Website-Full-Stack-Development/tree/main/Gym-management-Professional",
@@ -6944,7 +6949,7 @@ const PROJECTS = [
     "tools": [
       "Power BI & SQL EDA"
     ],
-    "outcome": "Delivered comprehensive Power BI & SQL EDA project.",
+    "outcome": "Power BI Star Schema dashboard tracking portfolio performance and equity metrics.",
     "description": "Build an end-to-end performance analytics solution that starts with transaction-level performance data, uses SQL for exploratory analysis and data preparation, structures the information into a dimensional analytical model, and delivers management-ready insights through Power BI....",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Power-BI-SQL-EDA/tree/main/Performance-share-Dashboard-Professional",
@@ -7154,7 +7159,7 @@ const PROJECTS = [
     "tools": [
       "Power BI & SQL EDA"
     ],
-    "outcome": "Delivered comprehensive Power BI & SQL EDA project.",
+    "outcome": "Power BI analytics dashboard tracking plant sales, growth metrics, and regional performance.",
     "description": "Interactive sales, product, customer and geographic growth analysis Build an interactive sales and growth analytics solution that transforms transaction-level plant and product data into a structured Power BI dashboard. The workflow uses SQL for exploratory analysis and data prep...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Power-BI-SQL-EDA/tree/main/Plants-growth-Dashboard",
@@ -7372,7 +7377,7 @@ const PROJECTS = [
     "tools": [
       "Power BI & SQL EDA"
     ],
-    "outcome": "Delivered comprehensive Power BI & SQL EDA project.",
+    "outcome": "Executive Power BI dashboard visualizing sales revenue, customer growth, and product margins.",
     "description": "Revenue, profitability, customers, products, geography and business-driver analysis Build an end-to-end sales analytics solution that starts with relational transaction data, uses SQL exploratory analysis and data-quality preparation to establish a reliable analytical foundation,...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Power-BI-SQL-EDA/tree/main/Sales-Overview_Dashboard",
@@ -7668,7 +7673,7 @@ const PROJECTS = [
     "tools": [
       "Power BI & SQL EDA"
     ],
-    "outcome": "Delivered comprehensive Power BI & SQL EDA project.",
+    "outcome": "Power BI dashboard analyzing social media post reach, engagement rates, and platform metrics.",
     "description": "Exploring social-media usage, engagement, addiction and well-being indicators Build an interactive Power BI analytics solution that transforms a student social-media dataset into a structured analytical experience. The project focuses on social-media usage, addiction, sleep, ment...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Power-BI-SQL-EDA/tree/main/social-media-reach-dashboard",
@@ -7940,7 +7945,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Tableau geospatial visualization of global earthquakes exceeding magnitude 6.0.",
     "description": "Tableau • Geospatial analytics • Earthquake frequency • Magnitude • Depth • Time-range analysis This portfolio Tableau project analyzes recorded earthquakes with magnitude 6 or greater across a historical study period. The dashboard combines global geographic visualization with t...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/Earthquakes_Magnitude_plus_6_1900_2013-Dashboard",
@@ -8252,7 +8257,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Tableau service desk dashboard monitoring weekly ticket volume, resolution rates, and SLAs.",
     "description": "TABLEAU • SERVICE ANALYTICS • KPI DESIGN • WEEKLY PERFORMANCE ANALYSIS Tableau • Service analytics • KPI design • Weekly trend analysis • Parameter actions • FIXED LOD calculations This portfolio Tableau project is an interactive Help Desk Weekly Analysis dashboard designed to ex...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/Help-Desk%20_Weekly%20Analysis-Dashboard",
@@ -8596,7 +8601,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Tableau analytics dashboard evaluating airline customer reviews, ratings, and travel feedback.",
     "description": "TABLEAU • CUSTOMER EXPERIENCE ANALYTICS • AIRCRAFT & TRAVELLER INSIGHTS Tableau • Customer review analytics • KPI comparison • Aircraft analysis • Geographic analysis • Parameter-driven metric selection This portfolio Tableau project is an interactive airline customer-review anal...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/Indigo%20Airways%20Reviews-dashboard",
@@ -8883,7 +8888,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Tableau dashboard analyzing Netflix content catalogue by release year, genre, and country.",
     "description": "TABLEAU • CONTENT ANALYTICS • GEOGRAPHIC ANALYSIS • CATALOGUE TRENDS • INTERACTIVE EXPLORATION Netflix Content Analysis is an interactive Tableau analytics project designed to explore the composition and distribution of a Netflix catalogue. The dashboard examines Movies and TV Sh...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/Netflix-Dashboard",
@@ -9213,7 +9218,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Comprehensive Tableau view of Netflix global streaming catalogue and content distribution.",
     "description": "TABLEAU • CONTENT ANALYTICS • GEOGRAPHIC ANALYSIS • CATALOGUE TRENDS • INTERACTIVE EXPLORATION Netflix Content Analysis is an interactive Tableau dashboard built to explore a Netflix catalogue across content type, release periods, ratings, genres, directors and geography. The sup...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/Netflix-Full-analysis-Dashboard",
@@ -9506,7 +9511,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Tableau state-level comparative dashboard tracking regional operational performance.",
     "description": "TABLEAU • SERVICE ANALYTICS • KPI DESIGN • WEEKLY TREND ANALYSIS • PARAMETER ACTIONS • FIXED LOD CALCULATIONS Help Desk — Weekly Analysis is an interactive Tableau service-analytics project designed to turn ticket-level support data into a focused weekly performance view. The das...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/state-level-comparision-Dashboard-Dashboard",
@@ -9906,7 +9911,7 @@ const PROJECTS = [
     "tools": [
       "Tableau Analytics"
     ],
-    "outcome": "Delivered comprehensive Tableau Analytics project.",
+    "outcome": "Tableau solar analytics dashboard visualizing real-time sun positioning and spatial coordinates.",
     "description": "TABLEAU • TIME-BASED VISUALIZATION • CALCULATED FIELDS • GEOGRAPHIC / ASTRONOMICAL ANALYSIS Position Of The Sun is a Tableau visualization project focused on representing the Sun's position and related time-based information through an interactive dashboard. The supplied packaged...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Tableau-Analytics-Dashboard/tree/main/The%20Actual%20Position%20Of%20The%20Sun-Dashboard",
@@ -10095,7 +10100,7 @@ const PROJECTS = [
     "tools": [
       "Excel Analytics"
     ],
-    "outcome": "Delivered comprehensive Excel Analytics project.",
+    "outcome": "Sounce master management Excel dashboard consolidating multi-channel revenue and margin KPIs.",
     "description": "SOUNCE Master — Management View Excel Management Reporting • Data Restructuring • Presentation • Traceability Project Type: Professional / Organization Requirement",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Excel-Analytics-Dashboards/tree/main/Sounce_Master_Management_View-Dashboard-Professional",
@@ -10288,7 +10293,7 @@ const PROJECTS = [
     "tools": [
       "Excel Analytics"
     ],
-    "outcome": "Delivered comprehensive Excel Analytics project.",
+    "outcome": "Sounce monthly sales tracker in Excel monitoring SKU performance across e-commerce marketplaces.",
     "description": "Sounce SALES INTELLIGENCE TRACKER Professional Excel Analytics • Enterprise Monthly Sales Reporting • Management Intelligence The Sounce Sales Intelligence Tracker is an enterprise-style Microsoft Excel reporting solution designed for recurring monthly sales/offtake management re...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Excel-Analytics-Dashboards/tree/main/Sounce-Sales-Intelligence-Monthly-Tracker-Dashboard-Professional",
@@ -10524,7 +10529,7 @@ const PROJECTS = [
     "tools": [
       "Excel Analytics"
     ],
-    "outcome": "Delivered comprehensive Excel Analytics project.",
+    "outcome": "Excel day-level sales intelligence dashboard tracking daily off-take across e-commerce channels.",
     "description": "Professional Excel Analytics • Daily Offtakes Performance • Monthly Management Reporting The SOUNCE Day-Level Sales Intelligence Dashboard is a professional Microsoft Excel reporting solution that extends an enterprise sales-intelligence architecture from monthly reporting into d...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Excel-Analytics-Dashboards/tree/main/Sounce-Sales-Intelligence-Tracker-Day_Level_Dashboard-Professional",
@@ -10722,7 +10727,7 @@ const PROJECTS = [
     "tools": [
       "Full-Stack Development"
     ],
-    "outcome": "Delivered comprehensive Full-Stack Development project.",
+    "outcome": "Full-stack multi-vendor grocery shopping Android app with real-time cart management.",
     "description": "Online Oasis — Multi-Vendor Grocery Shopping Android Application Android Application | E-Commerce Marketplace | Customer & Vendor Modules Online Oasis is an Android-based multi-vendor grocery shopping application designed to bring products from multiple vendors and stores into a ...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Full-Stack-Application-Development/tree/main/The-online-oasis-grocery-app",
@@ -10921,7 +10926,7 @@ const PROJECTS = [
       "SQL",
       "Power BI"
     ],
-    "outcome": "Delivered comprehensive SQL EDA & Data Handling project.",
+    "outcome": "MySQL data cleaning and exploratory SQL queries feeding an HR analytics dashboard.",
     "description": "MySQL • Data Cleaning • Exploratory Data Analysis • HR Analytics • Workforce Analytics This project combines end-to-end HR data cleaning with SQL exploratory data analysis. A raw Human Resources employee dataset is transformed into an analysis-ready MySQL dataset by correcting th...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/SQL-EDA-Advanced-Data-Handling/tree/main/HR-Dashboard-MySQL-PowerBI-EDA",
@@ -11259,7 +11264,7 @@ const PROJECTS = [
     "tools": [
       "SQL EDA & Data Handling"
     ],
-    "outcome": "Delivered comprehensive SQL EDA & Data Handling project.",
+    "outcome": "SQL Server exploratory analysis of retail sales data, customer trends, and product performance.",
     "description": "Microsoft SQL Server • Sales Analytics • Data Quality • Customer Analytics • Product Analytics • Advanced SQL This SQL analytics project develops a sales-analysis workflow across customers, orders, order details and products. The analysis uses a relational sales model consisting ...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/SQL-EDA-Advanced-Data-Handling/tree/main/Sales-Overview-EDA",
@@ -11634,7 +11639,7 @@ const PROJECTS = [
     "tools": [
       "Python EDA"
     ],
-    "outcome": "Delivered comprehensive Python EDA project.",
+    "outcome": "Python exploratory data analysis of monthly sales revenue, seasonal trends, and profit margins.",
     "description": "Exploratory analysis of monthly revenue patterns using Python, Pandas and visualization techniques. This project performs exploratory data analysis on a monthly revenue dataset. The notebook uses Python-based data analysis and visualization to inspect the structure of the data, p...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-EDA/tree/main/sales-revenue-eda-Professional",
@@ -11764,7 +11769,7 @@ const PROJECTS = [
     "tools": [
       "Python EDA"
     ],
-    "outcome": "Delivered comprehensive Python EDA project.",
+    "outcome": "Python data analysis examining healthcare access, mortality indicators, and public health data.",
     "description": "Multi-source analysis of mortality, population, healthcare capacity and health expenditure across countries and years. This project combines multiple global health datasets to build an analytical view of mortality, population, healthcare capacity and health expenditure. The suppl...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-EDA/tree/main/Tackling-health-crisis",
@@ -12007,7 +12012,7 @@ const PROJECTS = [
       "Automation & Bots",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Automation & Bots project.",
+    "outcome": "Python automation bot generating part-number catalog labels for e-commerce processing.",
     "description": "The project converts Sparkify's raw song metadata and user activity logs into a queryable PostgreSQL database designed specifically for song-play analysis. The source data is stored as JSON files across local song and log directories, making direct analytical querying inconvenien...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/AI-Automation-Professional-Bots/tree/main/Flipkart-Bottt(Part_no)-Professional",
@@ -12281,7 +12286,7 @@ const PROJECTS = [
       "Automation & Bots",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Automation & Bots project.",
+    "outcome": "Automated Swiggy product label document generation script for kitchen catalog management.",
     "description": "Swiggy Product Label Document Generation Structured Product Information | Label Layout | Barcode & EAN Output Create a structured product-label document that presents product identification, commercial information, manufacturing/import details, and barcode/EAN placeholders in a c...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/AI-Automation-Professional-Bots/tree/main/Label_Bot-swiggy-Professional",
@@ -12440,7 +12445,7 @@ const PROJECTS = [
       "Python Scraper Bots",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Python Scraper Bots project.",
+    "outcome": "Python automation bot identifying and flagging product suppression across retail marketplaces.",
     "description": "Suppression Automation Bot End-to-End Amazon ASIN Suppression Monitoring & Reporting Automation Develop an automated suppression-monitoring workflow for Clicktech's Amazon.in ASIN portfolio. The system is designed to collect ASIN-level availability information, apply business rul...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-Scraper-Bots/tree/main/Suppresstion-bot-Professional",
@@ -12667,7 +12672,7 @@ const PROJECTS = [
       "Python Scraper Bots",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Python Scraper Bots project.",
+    "outcome": "Python Selenium scraper extracting Amazon product listings, pricing, and buy-box data.",
     "description": "Browser automation, product-data extraction and Excel-based marketplace reporting This professional project is a Python-based Amazon marketplace data-collection bot designed to automate a repetitive product-information workflow. The bot takes a list of ASINs from an Excel workboo...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-Scraper-Bots/tree/main/amazon_scraper_bot-Professional",
@@ -12938,7 +12943,7 @@ const PROJECTS = [
       "Python Scraper Bots",
       "Python"
     ],
-    "outcome": "Delivered comprehensive Python Scraper Bots project.",
+    "outcome": "Python web scraping pipeline extracting historical sports statistics for predictive modeling.",
     "description": "NBA MVP Prediction Dataset — Web Scraping & Data Collection Basketball-Reference Data Extraction Pipeline Create a structured historical NBA dataset as the foundation for a machine-learning model intended to predict the MVP for each year. The supplied project focuses on the data-...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Python-Scraper-Bots/tree/main/Web-Scraping-stats-PYTHON-Professional",
@@ -13127,7 +13132,7 @@ const PROJECTS = [
     "tools": [
       "Advanced Data Engineering"
     ],
-    "outcome": "Delivered comprehensive Advanced Data Engineering project.",
+    "outcome": "PostgreSQL relational database schema design and ETL pipeline for music streaming analytics.",
     "description": "The project converts Sparkify's raw song metadata and user activity logs into a queryable PostgreSQL database designed specifically for song-play analysis. The source data is stored as JSON files across local song and log directories, making direct analytical querying inconvenien...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Advanced-Data-Engineering/tree/main/data-modelling-with-postgres",
@@ -13405,7 +13410,7 @@ const PROJECTS = [
     "tools": [
       "Advanced Data Engineering"
     ],
-    "outcome": "Delivered comprehensive Advanced Data Engineering project.",
+    "outcome": "AWS S3 and Redshift ETL pipeline extracting, transforming, and loading flight operations data.",
     "description": "The project converts Sparkify's raw song metadata and user activity logs into a queryable PostgreSQL database designed specifically for song-play analysis. The source data is stored as JSON files across local song and log directories, making direct analytical querying inconvenien...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Advanced-Data-Engineering/tree/main/flights-aws-etl-pipeline",
@@ -13682,7 +13687,7 @@ const PROJECTS = [
     "tools": [
       "Website Development"
     ],
-    "outcome": "Delivered comprehensive Website Development project.",
+    "outcome": "Responsive web-based music player interface with custom audio control and playlist UI.",
     "description": "PROFESSIONAL PROJECT • MUSIC STREAMING WEB APPLICATION • HTML • CSS • JAVASCRIPT The objective of this project is to develop a Spotify-inspired music streaming web application that allows users to browse a curated music collection, select tracks, control playback and move through...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Website-Full-Stack-Development/tree/main/Music-player-Professional",
@@ -13934,7 +13939,7 @@ const PROJECTS = [
     "tools": [
       "Website Development"
     ],
-    "outcome": "Delivered comprehensive Website Development project.",
+    "outcome": "Dynamic weather web app fetching real-time weather forecasts via REST API.",
     "description": "PROFESSIONAL PROJECT • WEB APPLICATION • HTML • CSS • JAVASCRIPT • OPENWEATHERMAP API The objective of this project is to develop a browser-based weather dashboard that allows users to enter a city or location and retrieve current weather information together with a five-day fore...",
     "link": "#",
     "githubUrl": "https://github.com/Sonu2rajen/Website-Full-Stack-Development/tree/main/Weather-App-Professional",

@@ -146,6 +146,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     clearCardSliderTimers();
 
+    // Render category description if available
+    const categoryDescEl = document.getElementById("category-description");
+    if (categoryDescEl) {
+      if (typeof CATEGORY_DESCRIPTIONS !== "undefined" && CATEGORY_DESCRIPTIONS[currentCategory]) {
+        categoryDescEl.textContent = CATEGORY_DESCRIPTIONS[currentCategory];
+        categoryDescEl.style.display = "block";
+      } else {
+        categoryDescEl.style.display = "none";
+      }
+    }
+
     const filtered = currentCategory === "All" 
       ? PROJECTS 
       : PROJECTS.filter(p => p.category === currentCategory);
