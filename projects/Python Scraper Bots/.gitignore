@@ -1,0 +1,38 @@
+# Virtual environments
+venv/
+.env/
+env/
+*_env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+
+# Node / Drivers / Binaries
+node_modules/
+*.exe
+*.dll
+*.so
+*.dylib
+*.driver
+
+# Large dataset/logs files
+*.csv
+*.xlsx
+*.log
+*.zip
+*.tar.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

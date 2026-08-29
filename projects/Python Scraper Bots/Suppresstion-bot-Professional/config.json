@@ -1,0 +1,29 @@
+{
+  "email": {
+    "sender": "sonurajendran2@gmail.com",
+    "password": "cwmbezxxexpwzkf",
+    "recipients": ["sonurajendran2@gmail.com"],
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 465
+  },
+  "folders": {
+    "input": "input",
+    "output": "output",
+    "logs": "logs",
+    "master": "master"
+  },
+  "files": {
+    "asin_input": "Clck-asins.xlsx",
+    "inventory_report": "Sounce_Master_Monthly_Report.xlsx",
+    "master_suppression": "Suppression_Sheet__1_.xlsx",
+    "master_sheet_name": "Clicktech"
+  },
+  "settings": {
+    "min_sellable_qty": 30,
+    "scraper_delay_min": 2,
+    "scraper_delay_max": 5,
+    "scraper_retries": 3,
+    "schedule_time": "07:00",
+    "brand": "Clicktech"
+  }
+}

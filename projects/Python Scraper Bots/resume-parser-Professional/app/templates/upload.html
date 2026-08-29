@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Upload Resume</h2>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <label>Select Resume (PDF / DOCX):</label><br><br>
+    <input type="file" name="resume" required><br><br>
+    <button type="submit">Upload & Parse</button>
+</form>
+
+<br>
+<a href="/candidates">View Parsed Candidates</a>
+{% endblock %}

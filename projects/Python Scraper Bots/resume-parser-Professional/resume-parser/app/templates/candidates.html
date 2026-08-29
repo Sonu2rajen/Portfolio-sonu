@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Parsed Candidates</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Action</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for c in candidates %}
+    <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.full_name }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.phone }}</td>
+        <td>
+            <a href="/candidates/{{ c.id }}">View</a>
+        </td>
+        <td>
+            <a href="/candidates/delete/{{ c.id }}"
+            onclick="return confirm('Are you sure you want to delete this candidate?');">
+            Delete
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

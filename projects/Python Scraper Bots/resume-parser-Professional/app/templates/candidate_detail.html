@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Candidate Profile</h2>
+
+<p><strong>Name:</strong> {{ candidate.full_name }}</p>
+<p><strong>Email:</strong> {{ candidate.email }}</p>
+<p><strong>Phone:</strong> {{ candidate.phone }}</p>
+
+<h3>Skills</h3>
+<ul>
+    {% for s in candidate.skills %}
+    <li>{{ s.skill_name }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Education</h3>
+<ul>
+    {% for e in candidate.educations %}
+    <li>{{ e.degree }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Experience</h3>
+<ul>
+    {% for exp in candidate.experiences %}
+    <li>{{ exp.role }}</li>
+    {% endfor %}
+</ul>
+
+<a href="/candidates">← Back to list</a>
+{% endblock %}
